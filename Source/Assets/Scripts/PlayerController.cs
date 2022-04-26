@@ -1,31 +1,37 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
+    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody rig;
-    [SerializeField] private Transform dir;
+    [SerializeField] private TextMeshProUGUI velValue;
+    private Vector3 force;
 
-    // Update is called once per frame
+    private void PlayerMovement()
+    {
+        rig.AddForce(force * moveSpeed);
+    }
+
+    private void GetPlayerInput()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        force = new Vector3(horizontal, 0, vertical);
+    }
+
+    //Getting user input
+    private void Update()
+    {
+        GetPlayerInput();
+    }
+
+    //Applying user input
     private void FixedUpdate()
     {
-        //Code test pas opti
-        if (Input.GetKey(KeyCode.Z))
-        {
-            rig.AddForce(dir.forward * 10f);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rig.AddForce(-dir.transform.forward * 10f);
-        }
-
-        if (Input.GetKey(KeyCode.Q))
-        {
-            rig.AddForce(-dir.transform.right * 10f);
-        }
-        
-        if (Input.GetKey(KeyCode.D))
-        {
-            rig.AddForce(dir.transform.right * 10f);
-        }
+        velValue.text = $"{rig.velocity.magnitude}";
+        PlayerMovement();
     }
 }

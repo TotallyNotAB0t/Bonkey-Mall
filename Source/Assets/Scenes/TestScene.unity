@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velValue: {fileID: 1474777906}
+  rig: {fileID: 1622163503}
 --- !u!1 &470010687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3868f97c7bdd2bc4a92d90e12fbda19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1622163502}
+  rBplayer: {fileID: 1622163503}
 --- !u!1 &1125742320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1431,7 @@ GameObject:
   - component: {fileID: 1387754690}
   - component: {fileID: 1387754689}
   m_Layer: 5
-  m_Name: CameraUI
+  m_Name: CanvaUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

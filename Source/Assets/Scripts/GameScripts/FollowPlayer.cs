@@ -9,17 +9,26 @@ public class FollowPlayer : MonoBehaviour
     }
     
     //Player to follow
-    [SerializeField] private Transform player;
+    [SerializeField] private Rigidbody rBplayer;
     private Vector3 cameraDistance;
+
+    private Vector3 speedDirection;
 
     private void Follow()
     {
-        transform.position = player.transform.position + cameraDistance;
+        transform.position = CameraState.ThirdPerson;
+        speedDirection = rBplayer.velocity;
+    }
+
+    private void Rotate()
+    {
+        transform.position = rBplayer.transform.position + cameraDistance;
+        transform.rotation = Quaternion.LookRotation(speedDirection, Vector3.up);
     }
 
     private void RotateAndLeave()
     {
-        var position = player.position;
+        var position = rBplayer.position;
         
         //Rotate
         transform.RotateAround(position, Vector3.up, 50 * Time.deltaTime);
@@ -29,23 +38,18 @@ public class FollowPlayer : MonoBehaviour
         transform.Translate(Vector3.back * 0.1f);
     }
 
-    private void Start()
+    private void Update()
     {
-        cameraDistance = CameraState.ThirdPerson;
-    }
-
-    private void Update() {
-        
         //Camera following the position of the player
         if (!FinishLine.IsFinished)
         {
             Follow();
+            Rotate();
         }
         else
         {
             RotateAndLeave();
         }
-        
         
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {

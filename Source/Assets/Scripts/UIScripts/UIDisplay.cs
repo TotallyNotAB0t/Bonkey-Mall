@@ -4,10 +4,11 @@ using UnityEngine;
 public class UIDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI velValue;
+    [SerializeField] private Rigidbody rig;
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        velValue.text = $"{Mathf.Round(GameObject.FindWithTag("Player").GetComponent<Rigidbody>().velocity.magnitude)}";
+        velValue.text = $"{Mathf.Round(rig.velocity.magnitude)}";
     }
 }

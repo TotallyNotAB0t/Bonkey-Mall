@@ -19,8 +19,14 @@ public class FollowPlayer : MonoBehaviour
 
     private void RotateAndLeave()
     {
-        //transform.Translate(Vector3.back * 0.01f);
-        transform.RotateAround(player.position, Vector3.left, 20* Time.deltaTime);
+        var position = player.position;
+        
+        //Rotate
+        transform.RotateAround(position, Vector3.up, 50 * Time.deltaTime);
+        transform.LookAt(position);
+        
+        //Going back
+        transform.Translate(Vector3.back * 0.1f);
     }
 
     private void Start()

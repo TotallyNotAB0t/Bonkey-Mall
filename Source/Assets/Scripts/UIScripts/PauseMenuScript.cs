@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PauseMenuScript : MonoBehaviour
+public class PauseMenuScript : BasicMenu
 {
     [SerializeField] private GameObject pauseMenu;
 
@@ -23,11 +23,6 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneController.GoToScene("MainMenu");
-    }
-    
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 
     private void Update()

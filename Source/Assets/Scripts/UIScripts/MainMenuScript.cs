@@ -1,14 +1,39 @@
 using UnityEngine;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
-public class MainMenuScript : MonoBehaviour
+public class MainMenuScript : BasicMenu
 {
-    public void PlayGame()
+    [SerializeField] private GameObject[] panels;
+    [SerializeField] private Button[] levels;
+    private int panelIndex = 0;
+
+    private void NextPanel()
     {
-        SceneController.GoToScene("TestScene");
+        panels[panelIndex].SetActive(false);
+        panelIndex++;
+        panels[panelIndex].SetActive(true);
     }
-    
-    public void QuitGame()
+
+    private void BackPanel()
     {
-        Application.Quit();
+        panels[panelIndex].SetActive(false);
+        panelIndex--;
+        panels[panelIndex].SetActive(true);
+    }
+
+    public void Next()
+    {
+        NextPanel();
+    }
+
+    public void Back()
+    {
+        BackPanel();
+    }
+
+    public void StartLevel(string levelName)
+    {
+        SceneController.GoToScene(levelName);
     }
 }

@@ -1,11 +1,9 @@
-using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody rig;
-    [SerializeField] private TextMeshProUGUI velValue;
     private Vector3 force;
 
     private void PlayerMovement()
@@ -30,7 +28,6 @@ public class PlayerController : MonoBehaviour
     //Applying user input
     private void FixedUpdate()
     {
-        velValue.text = $"{rig.velocity.magnitude}";
         PlayerMovement();
     }
 }

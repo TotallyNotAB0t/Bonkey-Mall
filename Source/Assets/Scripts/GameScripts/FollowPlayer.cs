@@ -16,13 +16,12 @@ public class FollowPlayer : MonoBehaviour
 
     private void Follow()
     {
-        transform.position = CameraState.ThirdPerson;
+        transform.position = rBplayer.transform.position;
         speedDirection = rBplayer.velocity;
     }
 
     private void Rotate()
     {
-        transform.position = rBplayer.transform.position + cameraDistance;
         transform.rotation = Quaternion.LookRotation(speedDirection, Vector3.up);
     }
 

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MyStringTable_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: cc9f4cd2fa4f5c2439698c9ae95f738b, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1506254852096
+    m_Localized: 'Vitesse :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4999216697344
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5050492063744
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5257636155392
+    m_Localized: Course unique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5395272241152
+    m_Localized: Retour
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5532295958528
+    m_Localized: Niveau 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5552059518976
+    m_Localized: Niveau 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5571768553472
+    m_Localized: Niveau 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5592207396864
+    m_Localized: Retour
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

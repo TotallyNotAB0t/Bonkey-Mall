@@ -54,6 +54,30 @@ MonoBehaviour:
     m_Localized: Retour
     m_Metadata:
       m_Items: []
+  - m_Id: 12664856711168
+    m_Localized: EN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21268389236736
+    m_Localized: EN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32105925513216
+    m_Localized: EN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33605594714112
+    m_Localized: EN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34106990202880
+    m_Localized: Reprendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34138971770880
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

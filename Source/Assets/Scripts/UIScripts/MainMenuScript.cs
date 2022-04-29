@@ -1,11 +1,8 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
 
 public class MainMenuScript : BasicMenu
 {
     [SerializeField] private GameObject[] panels;
-    [SerializeField] private Button[] levels;
     private int panelIndex = 0;
 
     private void NextPanel()

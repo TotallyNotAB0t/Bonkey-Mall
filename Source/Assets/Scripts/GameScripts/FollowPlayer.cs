@@ -4,13 +4,13 @@ public class FollowPlayer : MonoBehaviour
 {
     private static class CameraState
     {
-        public static readonly Vector3 ThirdPerson = new(0, 2, -5);
+        public static readonly Vector3 ThirdPerson = new(0, 2f, -5);
         public static readonly Vector3 FirstPerson = Vector3.zero;
     }
     
     //Player to follow
     [SerializeField] private Rigidbody rBplayer;
-    private Vector3 cameraDistance;
+    [SerializeField] private Camera cameraPlayer;
 
     private Vector3 speedDirection;
 
@@ -22,7 +22,10 @@ public class FollowPlayer : MonoBehaviour
 
     private void Rotate()
     {
-        transform.rotation = Quaternion.LookRotation(speedDirection, Vector3.up);
+        if (speedDirection != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(speedDirection, Vector3.up);
+        }
     }
 
     private void RotateAndLeave()
@@ -37,9 +40,15 @@ public class FollowPlayer : MonoBehaviour
         transform.Translate(Vector3.back * 0.1f);
     }
 
+    private void Start()
+    {
+        cameraPlayer.transform.localPosition = CameraState.ThirdPerson;
+    }
+
     private void Update()
     {
-        //Camera following the position of the player
+        Debug.DrawLine(Vector3.zero, speedDirection, Color.green);
+        
         if (!FinishLine.IsFinished)
         {
             Follow();
@@ -50,14 +59,16 @@ public class FollowPlayer : MonoBehaviour
             RotateAndLeave();
         }
         
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            cameraDistance = CameraState.FirstPerson;
-        }
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            cameraDistance = CameraState.ThirdPerson;
+            cameraPlayer.transform.localPosition = CameraState.FirstPerson;
         }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            cameraPlayer.transform.localPosition = CameraState.ThirdPerson;
+        }
+
+
     }
 }

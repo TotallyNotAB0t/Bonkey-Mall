@@ -4,19 +4,20 @@ public class PlayerController : MonoBehaviour
 {
     [Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody rig;
+    [SerializeField] private Transform camPlayer;
     private Vector3 force;
+    private Vector3 actualDirection;
 
     private void PlayerMovement()
     {
-        rig.AddForce(force * moveSpeed);
+        rig.AddForce(actualDirection * moveSpeed);
     }
 
     private void GetPlayerInput()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        force = new Vector3(horizontal, 0, vertical);
+        //Follows the axis of the camera rather than the default ones
+        Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        actualDirection = camPlayer.TransformDirection(controlDirection);
     }
 
     //Getting user input

@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         //Follows the axis of the camera rather than the default ones
         Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        actualDirection = camPlayer.TransformDirection(controlDirection);
+        actualDirection = Vector3.ProjectOnPlane(camPlayer.TransformDirection(controlDirection), 
+            Vector3.up);
     }
 
     //Getting user input

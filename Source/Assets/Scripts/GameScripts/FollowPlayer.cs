@@ -12,6 +12,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private Rigidbody rBplayer;
     [SerializeField] private Camera cameraPlayer;
 
+    [SerializeField, Range(0, 0.5f)] private float smoothness;
     private Vector3 speedDirection;
 
     private void Follow()
@@ -22,9 +23,13 @@ public class FollowPlayer : MonoBehaviour
 
     private void Rotate()
     {
-        if (speedDirection != Vector3.zero)
+        if (Vector3.Distance(speedDirection, Vector3.zero) >= 0.01f)
         {
-            transform.rotation = Quaternion.LookRotation(speedDirection, Vector3.up);
+            Vector3 result = Vector3.Lerp(transform.forward, speedDirection.normalized, smoothness);
+            if (Vector3.Dot(result, Vector3.up) > 0)
+                result = Vector3.ProjectOnPlane(result, Vector3.up);
+            
+            transform.rotation = Quaternion.LookRotation(result, Vector3.up);
         }
     }
 
@@ -59,6 +64,7 @@ public class FollowPlayer : MonoBehaviour
             RotateAndLeave();
         }
         
+        //Camera Views
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             cameraPlayer.transform.localPosition = CameraState.FirstPerson;
@@ -68,7 +74,5 @@ public class FollowPlayer : MonoBehaviour
         {
             cameraPlayer.transform.localPosition = CameraState.ThirdPerson;
         }
-
-
     }
 }

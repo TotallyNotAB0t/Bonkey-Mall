@@ -14,6 +14,12 @@ public class MoleGenerator : MonoBehaviour
     private void InstantiateMole()
     {
         Instantiate(molePrefab, sourceMole, false);
+        MoveGenerator();
         Invoke(nameof(InstantiateMole), Random.Range(1.5f, 3f));
+    }
+
+    private void MoveGenerator()
+    {
+        sourceMole.transform.position = new Vector3(Random.Range(-8f, 8f), 6.96f, 102.5f);
     }
 }

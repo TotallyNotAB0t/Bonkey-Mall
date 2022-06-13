@@ -52,7 +52,7 @@ public class FollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(Vector3.zero, speedDirection, Color.green);
+        Debug.DrawLine(rBplayer.transform.position, speedDirection, Color.green);
         
         if (!FinishLine.IsFinished)
         {

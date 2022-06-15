@@ -78,6 +78,30 @@ MonoBehaviour:
     m_Localized: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 16998587630510080
+    m_Localized: With AI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16998773639503872
+    m_Localized: Without AI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999531139194880
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999576525758464
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999592510251008
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17002837248991232
+    m_Localized: No bots
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

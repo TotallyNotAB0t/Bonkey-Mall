@@ -5,18 +5,25 @@ public class MainMenuScript : BasicMenu
     [SerializeField] private GameObject[] panels;
     private int panelIndex = 0;
 
+    //Using the canva component because disabled GameObject are very poorly usable with serialization
     private void NextPanel()
     {
-        panels[panelIndex].SetActive(false);
+        panels[panelIndex].GetComponent<Canvas>().enabled = false;
         panelIndex++;
-        panels[panelIndex].SetActive(true);
+        panels[panelIndex].GetComponent<Canvas>().enabled = true;
+        /*panels[panelIndex].SetActive(false);
+        panelIndex++;
+        panels[panelIndex].SetActive(true);*/
     }
 
     private void BackPanel()
     {
-        panels[panelIndex].SetActive(false);
+        panels[panelIndex].GetComponent<Canvas>().enabled = false;
         panelIndex--;
-        panels[panelIndex].SetActive(true);
+        panels[panelIndex].GetComponent<Canvas>().enabled = true;
+        /*panels[panelIndex].SetActive(false);
+        panelIndex--;
+        panels[panelIndex].SetActive(true);*/
     }
 
     public void Next()

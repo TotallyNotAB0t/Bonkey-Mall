@@ -102,6 +102,22 @@ MonoBehaviour:
     m_Localized: No bots
     m_Metadata:
       m_Items: []
+  - m_Id: 18568665973198848
+    m_Localized: 'Time :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575160903274496
+    m_Localized: Share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575578735644672
+    m_Localized: Return to Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576948486279168
+    m_Localized: Next race
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

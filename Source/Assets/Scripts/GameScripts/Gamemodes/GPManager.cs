@@ -52,7 +52,6 @@ public class GPManager : MonoBehaviour
     {
         totalTime = 0;
     }
-    
 
     [Serializable]
     public class Level

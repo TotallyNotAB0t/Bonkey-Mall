@@ -102,6 +102,22 @@ MonoBehaviour:
     m_Localized: Pas de Bot
     m_Metadata:
       m_Items: []
+  - m_Id: 18568665973198848
+    m_Localized: 'Temps :'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575160903274496
+    m_Localized: Partager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575578735644672
+    m_Localized: Retourner au menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576948486279168
+    m_Localized: Prochaine course
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

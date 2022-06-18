@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
+    private int place = 1;
     public static bool IsFinished;
 
     private void Start()
@@ -10,22 +11,29 @@ public class FinishLine : MonoBehaviour
         IsFinished = false;
     }
 
-    private void GoToMenu()
+    private void NextScene()
     {
-        SceneController.GoToScene("MainMenu");
+        SceneController.GoToScene("BetweenRaces");
     }
 
-    private void GoToNextLevel(string nextLevel)
-    {
-        Debug.Log("Going to next level");
-        //TODO
-        //SceneController.GoToScene(nextLevel);
-    }
-    
     private IEnumerator OnTriggerEnter(Collider other)
     {
-        IsFinished = true;
-        yield return new WaitForSeconds(3f);
-        GoToMenu();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            IsFinished = true;
+            Timer.timerIsRunning = false;
+            var go = GameObject.FindWithTag("Script").GetComponent<Timer>();
+            LevelManager.SetTime(go.GetTime());
+            LevelManager.SetPlace(place);
+            LevelManager.SetLevelName(gameObject.scene.name);
+            yield return new WaitForSeconds(3f);
+            NextScene();
+        }
+        else
+        {
+            place++;
+            Destroy(other.gameObject);
+        }
+
     }
 }

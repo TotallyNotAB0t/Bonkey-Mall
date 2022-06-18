@@ -75,6 +75,30 @@ MonoBehaviour:
     m_Key: CourseTest/BaseLevelPref/Pause Camera/Canvas/QuitButton/QuitText
     m_Metadata:
       m_Items: []
+  - m_Id: 16998587630510080
+    m_Key: MainMenu/AICanva/AIYes/YesText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16998773639503872
+    m_Key: MainMenu/AICanva/AINo/NoText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999531139194880
+    m_Key: MainMenu/AIDifficulty/DifficultyE/EText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999576525758464
+    m_Key: MainMenu/AIDifficulty/DifficultyM/MText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16999592510251008
+    m_Key: MainMenu/AIDifficulty/DifficultyH/HText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17002837248991232
+    m_Key: MainMenu/AICanva/DifficultyN/NText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

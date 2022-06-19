@@ -28,7 +28,14 @@ public class MainMenuScript : BasicMenu
 
     public void Next()
     {
-        NextPanel();
+        if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix)
+        {
+            SceneController.GoToScene("lvl1");
+        }
+        else
+        { 
+            NextPanel(); 
+        }
     }
 
     public void Back()

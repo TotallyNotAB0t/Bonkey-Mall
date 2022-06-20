@@ -11,7 +11,7 @@ public class testIa : MonoBehaviour
     void Start()
     {
         NavMeshAgent agent = bol.GetComponent<NavMeshAgent>();
-        agent.destination = gol.transform.position;
+            agent.destination = gol.transform.position;
     }
 
     // Update is called once per frame

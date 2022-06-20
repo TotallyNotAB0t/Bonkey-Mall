@@ -19,17 +19,20 @@ public class FinishLine : MonoBehaviour
     private void LevelSetupStats()
     {
         var go = GameObject.FindWithTag("Script").GetComponent<Timer>();
-        if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.SingleLevel)
+        switch (GameModeManager.CurrentLevelGamemode)
         {
-            LevelManager.SetTime(go.GetTime());
-            LevelManager.SetPlace(place);
-            LevelManager.SetLevelName(gameObject.scene.name);
-        }
-        else if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix)
-        {
-            GPManager.IncrementIndex();
-            GPManager.AddPoints(2);
-            GPManager.AddTime(go.GetTime());
+            case GameModeManager.GameMode.SingleLevel:
+                LevelManager.SetTime(go.GetTime());
+                LevelManager.SetPlace(place);
+                LevelManager.SetLevelName(gameObject.scene.name);
+                break;
+            
+            case GameModeManager.GameMode.GrandPrix:
+                GPManager.IncrementIndex();
+                //A changer avec plus de bots
+                GPManager.AddPoints(place == 1 ? 10 : 2);
+                GPManager.AddTime(go.GetTime());
+                break;
         }
     }
 

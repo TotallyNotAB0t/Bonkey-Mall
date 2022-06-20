@@ -115,6 +115,10 @@ MonoBehaviour:
     m_Key: BetweenRaces/GPCanva/NextRaceBTN/NextRaceTxt
     m_Metadata:
       m_Items: []
+  - m_Id: 19241697419005952
+    m_Key: GPEnd/Canvas/ShareBtn/ShareTxt
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

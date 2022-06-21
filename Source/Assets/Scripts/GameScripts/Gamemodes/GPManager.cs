@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GPManager : MonoBehaviour
@@ -5,6 +6,14 @@ public class GPManager : MonoBehaviour
     private static int totalPoint;
     private static float totalTime;
     private static int levelIndex = 1;
+    [SerializeField] private TextMeshProUGUI TextPoints;
+    [SerializeField] private TextMeshProUGUI TextTime;
+
+    private void Start()
+    {
+        TextPoints.text = GetPoints().ToString();
+        TextTime.text = GetTime().ToString();
+    }
 
     public static int GetPoints()
     {

@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using System.Collections;
 
 public class BetweenRacesManager : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class BetweenRacesManager : MonoBehaviour
     
     private void Start()
     {
+        Debug.Log(GameModeManager.CurrentLevelGamemode);
         switch (GameModeManager.CurrentLevelGamemode)
         {
             case GameModeManager.GameMode.SingleLevel:

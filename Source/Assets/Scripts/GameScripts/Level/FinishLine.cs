@@ -28,6 +28,9 @@ public class FinishLine : MonoBehaviour
                 break;
             
             case GameModeManager.GameMode.GrandPrix:
+                LevelManager.SetTime(go.GetTime());
+                LevelManager.SetPlace(place);
+                LevelManager.SetLevelName(gameObject.scene.name);
                 GPManager.IncrementIndex();
                 //A changer avec plus de bots
                 GPManager.AddPoints(place == 1 ? 10 : 2);
@@ -44,7 +47,14 @@ public class FinishLine : MonoBehaviour
             Timer.timerIsRunning = false;
             LevelSetupStats();
             yield return new WaitForSeconds(3f);
-            NextScene();
+            if (gameObject.scene.name == "lvl5")
+            {
+                SceneController.GoToScene("GPEnd");
+            }
+            else
+            {
+                NextScene();
+            }
         }
         else
         {

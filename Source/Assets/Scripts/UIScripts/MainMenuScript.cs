@@ -5,6 +5,35 @@ public class MainMenuScript : BasicMenu
     [SerializeField] private GameObject[] panels;
     private int panelIndex = 0;
 
+    private void Start()
+    {
+        if (gameObject.scene.name == "MainMenu")
+        {
+            GameModeManager.ResetGameMode();
+        }
+    }
+
+    public void SetDifficulty(int enumInt)
+    {
+        switch ((LevelManager.Difficulty)enumInt)
+        {
+            case LevelManager.Difficulty.None:
+                LevelManager.SetDifficulty(LevelManager.Difficulty.None);
+                break;
+            case LevelManager.Difficulty.Easy:
+                LevelManager.SetDifficulty(LevelManager.Difficulty.Easy);
+                break;
+            case LevelManager.Difficulty.Medium:
+                LevelManager.SetDifficulty(LevelManager.Difficulty.Medium);
+                break;
+            case LevelManager.Difficulty.Hard:
+                LevelManager.SetDifficulty(LevelManager.Difficulty.Hard);
+                break;
+
+        }
+        Debug.Log(LevelManager.GetDifficulty());
+    }
+
     //Using the canva component because disabled GameObject are very poorly usable with serialization
     private void NextPanel()
     {
@@ -28,7 +57,14 @@ public class MainMenuScript : BasicMenu
 
     public void Next()
     {
-        NextPanel();
+        if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix)
+        {
+            SceneController.GoToSceneInt(1);
+        }
+        else
+        {
+            NextPanel();
+        }
     }
 
     public void Back()

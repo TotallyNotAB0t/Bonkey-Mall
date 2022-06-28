@@ -1,14 +1,19 @@
+using TMPro;
 using UnityEngine;
+
 public class Timer : MonoBehaviour
 {
     private float timeElapsed = 0f;
-    public bool timerIsRunning;
+    public static bool timerIsRunning;
     private string text;
+    [SerializeField] private TextMeshProUGUI timeText;
+    
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
     }
+    
     void Update()
     {
         if (timerIsRunning)
@@ -17,6 +22,11 @@ public class Timer : MonoBehaviour
             DisplayTime(timeElapsed);
         }
     }
+
+    public float GetTime()
+    {
+        return timeElapsed;
+    }
     
     void DisplayTime(float timeToDisplay)
     {
@@ -24,6 +34,6 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         text = $"{minutes:00}:{seconds:00}";
-        Debug.Log(text);
+        timeText.text = text;
     }
 }

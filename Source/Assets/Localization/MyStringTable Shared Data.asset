@@ -99,6 +99,26 @@ MonoBehaviour:
     m_Key: MainMenu/AICanva/DifficultyN/NText
     m_Metadata:
       m_Items: []
+  - m_Id: 18568665973198848
+    m_Key: lvl1/PrefabScene/CameraUI/TimeText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575160903274496
+    m_Key: BetweenRaces/Canvas/ShareBtn/ShareTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18575578735644672
+    m_Key: BetweenRaces/Canvas/ReturnMenuBtn/ReturnMenuTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18576948486279168
+    m_Key: BetweenRaces/GPCanva/NextRaceBTN/NextRaceTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19241697419005952
+    m_Key: GPEnd/Canvas/ShareBtn/ShareTxt
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -1,12 +1,19 @@
-using System;
+using TMPro;
 using UnityEngine;
 
 public class GPManager : MonoBehaviour
 {
     private static int totalPoint;
-    private static int levelIndex;
     private static float totalTime;
-    public static Level[] grandPrix = new Level[4];
+    private static int levelIndex = 1;
+    [SerializeField] private TextMeshProUGUI TextPoints;
+    [SerializeField] private TextMeshProUGUI TextTime;
+
+    private void Start()
+    {
+        TextPoints.text = GetPoints().ToString();
+        TextTime.text = GetTime().ToString();
+    }
 
     public static int GetPoints()
     {
@@ -35,7 +42,7 @@ public class GPManager : MonoBehaviour
 
     public static void ResetIndex()
     {
-        levelIndex = 0;
+        levelIndex = 1;
     }
 
     public static float GetTime()
@@ -51,14 +58,5 @@ public class GPManager : MonoBehaviour
     public static void ResetTime()
     {
         totalTime = 0;
-    }
-    
-
-    [Serializable]
-    public class Level
-    {
-        public string LevelName;
-        public float Time;
-        public float Place;
     }
 }

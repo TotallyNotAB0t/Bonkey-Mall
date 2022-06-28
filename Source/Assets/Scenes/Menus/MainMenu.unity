@@ -1645,7 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ebb43a509ea2349a29eb87a8b3dc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  molePrefab: {fileID: 4707183470546634520, guid: 629b6ed83bb6b914aa3cf3882bf5f385, type: 3}
+  molePrefab: {fileID: 93094364464029142, guid: db31524ca9ec8044d861f46e334c4a73, type: 3}
   sourceMole: {fileID: 638370420}
 --- !u!1 &681035884
 GameObject:

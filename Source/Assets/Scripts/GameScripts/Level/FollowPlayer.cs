@@ -50,7 +50,7 @@ public class FollowPlayer : MonoBehaviour
         cameraPlayer.transform.localPosition = CameraState.ThirdPerson;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Debug.DrawLine(rBplayer.transform.position, speedDirection, Color.green);
         

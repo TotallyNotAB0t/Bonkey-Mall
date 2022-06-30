@@ -32,6 +32,7 @@ public class FinishLine : MonoBehaviour
                 LevelManager.SetPlace(place);
                 LevelManager.SetLevelName(gameObject.scene.name);
                 GPManager.IncrementIndex();
+                
                 //A changer avec plus de bots
                 GPManager.AddPoints(place == 1 ? 10 : 2);
                 GPManager.AddTime(go.GetTime());

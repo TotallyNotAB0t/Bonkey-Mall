@@ -8,7 +8,7 @@ public class BetweenRacesManager : MonoBehaviour
     public TextMeshProUGUI a1;
     public TextMeshProUGUI a2;
     public TextMeshProUGUI a3;
-    
+
     private void Start()
     {
         Debug.Log(GameModeManager.CurrentLevelGamemode);

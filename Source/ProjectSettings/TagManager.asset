@@ -7,6 +7,8 @@ TagManager:
   - Bot
   - Script
   - Goal
+  - Bot2
+  - Bot1
   layers:
   - Default
   - TransparentFX

@@ -1,11 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class powerUp : MonoBehaviour
+public class PowerUp : MonoBehaviour
 {
 
     [SerializeField] private GameObject player;

@@ -53,3 +53,9 @@ TagManager:
   - name: Map
     uniqueID: 2500231753
     locked: 0
+  - name: Camera1
+    uniqueID: 3220349195
+    locked: 0
+  - name: Camera2
+    uniqueID: 4269375671
+    locked: 0

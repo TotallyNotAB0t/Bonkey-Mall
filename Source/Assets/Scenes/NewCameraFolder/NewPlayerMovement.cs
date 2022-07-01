@@ -1,8 +1,8 @@
 using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
-{
-    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
+{ 
+    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed = 20;
     [SerializeField] private Rigidbody rig;
     [SerializeField] private Transform straightCam;
     private Vector3 force;
@@ -17,9 +17,15 @@ public class NewPlayerMovement : MonoBehaviour
     private void GetPlayerInput()
     {
         //Get the forward vector of the Camera, moved left and right
-        
-       inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-       cameraFacing = (straightCam.forward * inputAxis.z);
+        if (gameObject.CompareTag("Player"))
+        {
+            inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); 
+        }
+        else if (gameObject.CompareTag("Player2"))
+        {
+            inputAxis = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2")); 
+        }
+        cameraFacing = (straightCam.forward * inputAxis.z);
     }
 
     //Getting user input

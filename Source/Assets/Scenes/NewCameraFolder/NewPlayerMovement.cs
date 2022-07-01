@@ -16,7 +16,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void GetPlayerInput()
     {
-        //Follows the axis of the camera rather than the default ones
+        //Get the forward vector of the Camera, moved left and right
+        
        inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
        cameraFacing = (straightCam.forward * inputAxis.z);
     }

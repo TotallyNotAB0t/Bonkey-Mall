@@ -4,8 +4,7 @@ public class NewPlayerMovement : MonoBehaviour
 { 
     [Range(1.0f, 20f)] [SerializeField] private float moveSpeed = 20;
     [SerializeField] private Rigidbody rig;
-    [SerializeField] private Transform straightCam;
-    private Vector3 force;
+    [SerializeField] private Transform cam;
     private Vector3 inputAxis;
     private Vector3 cameraFacing;
 
@@ -25,7 +24,8 @@ public class NewPlayerMovement : MonoBehaviour
         {
             inputAxis = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2")); 
         }
-        cameraFacing = (straightCam.forward * inputAxis.z);
+        //Getting straight vector
+        cameraFacing = new Vector3(cam.forward.x, 0, cam.forward.z) * inputAxis.z;
     }
 
     //Getting user input

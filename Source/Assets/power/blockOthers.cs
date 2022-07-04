@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,18 +10,6 @@ public class blockOthers : MonoBehaviour
     [SerializeField] private GameObject bot1;
 
     [SerializeField] private GameObject bot2;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -56,20 +43,18 @@ public class blockOthers : MonoBehaviour
     private IEnumerator blockPlayerBot2()
     {
         player.GetComponent<Rigidbody>().mass = 10000f;
-        yield return new WaitForSeconds(3);
-        player.GetComponent<Rigidbody>().mass = 1;
         bot2.GetComponent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(3);
-        bot2.GetComponent<NavMeshAgent>().speed = 112;
+        player.GetComponent<Rigidbody>().mass = 1;
+        bot2.GetComponent<NavMeshAgent>().speed = 12;
     }
     
     private IEnumerator blockPlayerBot1()
     {
         player.GetComponent<Rigidbody>().mass = 10000f;
-        yield return new WaitForSeconds(3);
-        player.GetComponent<Rigidbody>().mass = 1;
         bot1.GetComponent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(3);
+        player.GetComponent<Rigidbody>().mass = 1;
         bot1.GetComponent<NavMeshAgent>().speed = 12;
     }
 }

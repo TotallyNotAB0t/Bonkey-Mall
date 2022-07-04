@@ -1,10 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class speedUp : MonoBehaviour
+public class speedDown : MonoBehaviour
 {
-
     [SerializeField] private GameObject player;
 
     [SerializeField] private GameObject bot1;
@@ -44,7 +44,7 @@ public class speedUp : MonoBehaviour
 
     private IEnumerator SpeedPlayer()
     {
-        player.GetComponent<Rigidbody>().mass = 0.5f;
+        player.GetComponent<Rigidbody>().mass = 3f;
         yield return new WaitForSeconds(3);
         player.GetComponent<Rigidbody>().mass = 1;
     }

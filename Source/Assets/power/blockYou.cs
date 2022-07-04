@@ -1,8 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class speedUp : MonoBehaviour
+public class blockYou : MonoBehaviour
 {
 
     [SerializeField] private GameObject player;
@@ -27,39 +28,40 @@ public class speedUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(SpeedPlayer());
+            StartCoroutine(blockPlayer());
         }
         
         if (collision.gameObject.CompareTag("Bot1"))
         {
-            StartCoroutine(SpeedBot1());
+            StartCoroutine(blockBot1());
         }
         
         if (collision.gameObject.CompareTag("Bot2"))
         {
-            StartCoroutine(SpeedBot2());
+            StartCoroutine(blockBot2());
         }
 
     }
 
-    private IEnumerator SpeedPlayer()
+    private IEnumerator blockPlayer()
     {
-        player.GetComponent<Rigidbody>().mass = 0.5f;
+        Debug.Log("oui");
+        player.GetComponent<Rigidbody>().mass = 10000f;
         yield return new WaitForSeconds(3);
         player.GetComponent<Rigidbody>().mass = 1;
     }
     
-    private IEnumerator SpeedBot1()
+    private IEnumerator blockBot1()
     {
-        bot1.GetComponent<NavMeshAgent>().speed = 9;
+        bot1.GetComponent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(3);
-        bot1.GetComponent<NavMeshAgent>().speed = 18;
+        bot1.GetComponent<NavMeshAgent>().speed = 12;
     }
     
-    private IEnumerator SpeedBot2()
+    private IEnumerator blockBot2()
     {
-        bot2.GetComponent<NavMeshAgent>().speed = 9;
+        bot2.GetComponent<NavMeshAgent>().speed = 0;
         yield return new WaitForSeconds(3);
-        bot2.GetComponent<NavMeshAgent>().speed = 18;
+        bot2.GetComponent<NavMeshAgent>().speed = 12;
     }
 }

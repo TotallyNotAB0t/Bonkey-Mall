@@ -54,7 +54,7 @@ public class FollowPlayer : MonoBehaviour
     {
         Debug.DrawLine(rBplayer.transform.position, speedDirection, Color.green);
         
-        if (!FinishLine.IsFinished)
+        /*if (!FinishLine.IsFinished)
         {
             Follow();
             Rotate();
@@ -62,7 +62,7 @@ public class FollowPlayer : MonoBehaviour
         else
         {
             RotateAndLeave();
-        }
+        }*/
         
         //Camera Views
         if (Input.GetKeyDown(KeyCode.Alpha1))

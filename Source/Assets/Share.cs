@@ -9,7 +9,7 @@ public class Share : MonoBehaviour
 
     /*FACEBOOK*/
     string AppID = "553708503016668";
-    string Link = "https://github.com/Chaussurre/Glitch-Racers/tree/NewProjectBranch";
+    string Link = "https://github.com/TotallyNotAB0t/Bonkey-Mall/tree/master";
     string PictureFirst = "https://i.imgur.com/U72BfWR.png"; 
     string PictureSecond = "https://i.imgur.com/8h74FZg.png";
     string PictureThird = "https://i.imgur.com/4N9Itdo.png";
@@ -17,24 +17,24 @@ public class Share : MonoBehaviour
     
     public void shareScoreOnTwitter () 
     {
-        Application.OpenURL (TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(textToDisplay) + LevelManager.GetPlace() + "&amp;lang=" + WWW.EscapeURL(TWEET_LANGUAGE));
+        Application.OpenURL (TWITTER_ADDRESS + "?text=" + WWW.EscapeURL(textToDisplay) + LevelManager.GetPlaceP1() + "&amp;lang=" + WWW.EscapeURL(TWEET_LANGUAGE));
     }
 	
     // Facebook Share Button
     public void shareScoreOnFacebook ()
     {
         ScreenCapture.CaptureScreenshot("SomeLevel");
-        if (LevelManager.GetPlace() == 1)
+        if (LevelManager.GetPlaceP1() == 1)
         {
             Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureFirst);
         }
 
-        if (LevelManager.GetPlace() == 2)
+        if (LevelManager.GetPlaceP1() == 2)
         {
             Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureSecond);
         }
 
-        if (LevelManager.GetPlace() == 3)
+        if (LevelManager.GetPlaceP1() == 3)
         {
             Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureThird);
         }

@@ -3,31 +3,52 @@ using UnityEngine;
 
 public class GPManager : MonoBehaviour
 {
-    private static int totalPoint;
-    private static float totalTime;
+    private static int totalPointP1;
+    private static int totalPointP2;
+    private static float totalTimeP1;
+    private static float totalTimeP2;
     private static int levelIndex = 1;
-    [SerializeField] private TextMeshProUGUI TextPoints;
-    [SerializeField] private TextMeshProUGUI TextTime;
+    [SerializeField] private TextMeshProUGUI TextPointsP1;
+    [SerializeField] private TextMeshProUGUI TextPointsP2;
+    [SerializeField] private TextMeshProUGUI TextTimeP1;
+    [SerializeField] private TextMeshProUGUI TextTimeP2;
 
     private void Start()
     {
-        TextPoints.text = GetPoints().ToString();
-        TextTime.text = GetTime().ToString();
+        TextPointsP1.text = GetPointsP1().ToString();
+        TextPointsP2.text = GetPointsP2().ToString();
+        TextTimeP1.text = GetTimeP1().ToString();
+        TextTimeP2.text = GetTimeP2().ToString();
     }
 
-    public static int GetPoints()
+    public static int GetPointsP1()
     {
-        return totalPoint;
+        return totalPointP1;
     }
 
-    public static void AddPoints(int points)
+    public static void AddPointsP1(int points)
     {
-        totalPoint += points;
+        totalPointP1 += points;
     }
 
-    public static void ResetPoints()
+    public static void ResetPointsP1()
     {
-        totalPoint = 0;
+        totalPointP1 = 0;
+    }
+    
+    public static int GetPointsP2()
+    {
+        return totalPointP2;
+    }
+
+    public static void AddPointsP2(int points)
+    {
+        totalPointP2 += points;
+    }
+
+    public static void ResetPointsP2()
+    {
+        totalPointP2 = 0;
     }
 
     public static int GetIndex()
@@ -45,18 +66,33 @@ public class GPManager : MonoBehaviour
         levelIndex = 1;
     }
 
-    public static float GetTime()
+    public static float GetTimeP1()
     {
-        return totalTime;
+        return totalTimeP1;
     }
 
-    public static void AddTime(float time)
+    public static void AddTimeP1(float time)
     {
-        totalTime += time;
+        totalTimeP1 += time;
     }
 
-    public static void ResetTime()
+    public static void ResetTimeP1()
     {
-        totalTime = 0;
+        totalTimeP1 = 0;
+    }
+    
+    public static float GetTimeP2()
+    {
+        return totalTimeP2;
+    }
+
+    public static void AddTimeP2(float time)
+    {
+        totalTimeP2 += time;
+    }
+
+    public static void ResetTimeP2()
+    {
+        totalTimeP2 = 0;
     }
 }

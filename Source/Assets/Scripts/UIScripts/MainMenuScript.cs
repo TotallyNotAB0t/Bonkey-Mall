@@ -31,7 +31,6 @@ public class MainMenuScript : BasicMenu
                 break;
 
         }
-        Debug.Log(LevelManager.GetDifficulty());
     }
 
     //Using the canva component because disabled GameObject are very poorly usable with serialization

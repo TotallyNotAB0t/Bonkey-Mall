@@ -12,8 +12,21 @@ public class LevelManager : MonoBehaviour
 
     private static string LevelName;
     private static Difficulty LevelDifficulty;
-    private static float LevelTime;
-    private static int LevelPlace;
+    private static float LevelTimeP1;
+    private static float LevelTimeP2;
+    private static int LevelPlaceP1;
+    private static int LevelPlaceP2;
+    private static bool IsMultiplayer;
+
+    public static void SetMultiplayer(bool multi)
+    {
+        IsMultiplayer = multi;
+    }
+
+    public static bool GetMultiplayer()
+    {
+        return IsMultiplayer;
+    }
 
     public static void SetDifficulty(Difficulty difficulty)
     {
@@ -25,24 +38,44 @@ public class LevelManager : MonoBehaviour
         return LevelDifficulty;
     }
 
-    public static void SetTime(float time)
+    public static void SetTimeP1(float time)
     {
-        LevelTime = time;
+        LevelTimeP1 = time;
     }
 
-    public static float GetTime()
+    public static float GetTimeP1()
     {
-        return LevelTime;
+        return LevelTimeP1;
+    }
+    
+    public static void SetTimeP2(float time)
+    {
+        LevelTimeP2 = time;
     }
 
-    public static void SetPlace(int place)
+    public static float GetTimeP2()
     {
-        LevelPlace = place;
+        return LevelTimeP2;
     }
 
-    public static int GetPlace()
+    public static void SetPlaceP1(int place)
     {
-        return LevelPlace;
+        LevelPlaceP1 = place;
+    }
+
+    public static int GetPlaceP1()
+    {
+        return LevelPlaceP1;
+    }
+    
+    public static void SetPlaceP2(int place)
+    {
+        LevelPlaceP2 = place;
+    }
+
+    public static int GetPlaceP2()
+    {
+        return LevelPlaceP2;
     }
 
     public static string GetLevelName()
@@ -58,7 +91,10 @@ public class LevelManager : MonoBehaviour
     public static void ResetLevelInformation()
     {
         LevelDifficulty = Difficulty.None;
-        LevelTime = 0;
-        LevelPlace = 0;
+        LevelTimeP1 = 0;
+        LevelPlaceP1 = 0;
+        LevelTimeP2 = 0;
+        LevelPlaceP2 = 0;
+        
     }
 }

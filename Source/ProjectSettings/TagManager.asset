@@ -20,7 +20,7 @@ TagManager:
   - Map
   - Camera1
   - Camera2
-  - 
+  - CameraPause
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 2500231753
+    locked: 0
+  - name: CameraPause
+    uniqueID: 4281525039
     locked: 0
   - name: Camera1
     uniqueID: 3220349195

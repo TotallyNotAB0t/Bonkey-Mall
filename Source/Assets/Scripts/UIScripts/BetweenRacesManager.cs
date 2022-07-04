@@ -8,10 +8,11 @@ public class BetweenRacesManager : MonoBehaviour
     public TextMeshProUGUI a1;
     public TextMeshProUGUI a2;
     public TextMeshProUGUI a3;
+    public TextMeshProUGUI a4;
+    public TextMeshProUGUI a5;
 
     private void Start()
     {
-        Debug.Log(GameModeManager.CurrentLevelGamemode);
         switch (GameModeManager.CurrentLevelGamemode)
         {
             case GameModeManager.GameMode.SingleLevel:
@@ -22,8 +23,13 @@ public class BetweenRacesManager : MonoBehaviour
                 break;
         }
         a1.text = $"Level : {LevelManager.GetLevelName()}";
-        a2.text = $"Place : {LevelManager.GetPlace()}";
-        a3.text = $"Time : {LevelManager.GetTime()}";
+        a2.text = $"Place : {LevelManager.GetPlaceP1()}";
+        a3.text = $"Time : {LevelManager.GetTimeP1()}";
+        if (LevelManager.GetMultiplayer())
+        {
+            a4.text = $"Place : {LevelManager.GetPlaceP2()}";
+            a5.text = $"Time : {LevelManager.GetTimeP2()}"; 
+        }
     }
 
     public void NextRace()

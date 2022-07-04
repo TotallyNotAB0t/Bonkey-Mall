@@ -4,63 +4,105 @@ using UnityEngine;
 public class FinishLine : MonoBehaviour
 {
     private int place = 1;
-    public static bool IsFinished;
+    private bool P1Finished;
+    private bool P2Finished;
 
-    private void Start()
+    private void LevelSetupStats(int player)
     {
-        IsFinished = false;
+        var go = GameObject.FindWithTag("Script").GetComponent<Timer>();
+        
+        if (player == 1)
+        {
+            LevelManager.SetTimeP1(go.GetTime(1));
+            LevelManager.SetPlaceP1(place);
+        }
+        else
+        {
+            LevelManager.SetTimeP2(go.GetTime(2));
+            LevelManager.SetPlaceP2(place);
+        }
+        LevelManager.SetLevelName(gameObject.scene.name);
+
+        if (GameModeManager.CurrentLevelGamemode != GameModeManager.GameMode.GrandPrix) return;
+        GPManager.IncrementIndex();
+        //A changer avec plus de bots
+        if (player == 1)
+        {
+            GPManager.AddPointsP1(place == 1 ? 10 : 2);
+            GPManager.AddTimeP1(go.GetTime(1));
+        }
+        else
+        {
+            GPManager.AddPointsP2(place == 1 ? 10 : 2);
+            GPManager.AddTimeP2(go.GetTime(2));
+        }
     }
 
     private void NextScene()
     {
-        SceneController.GoToScene("BetweenRaces");
-    }
-
-    private void LevelSetupStats()
-    {
-        var go = GameObject.FindWithTag("Script").GetComponent<Timer>();
-        switch (GameModeManager.CurrentLevelGamemode)
+        if (gameObject.scene.name == "lvl5" && GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix)
         {
-            case GameModeManager.GameMode.SingleLevel:
-                LevelManager.SetTime(go.GetTime());
-                LevelManager.SetPlace(place);
-                LevelManager.SetLevelName(gameObject.scene.name);
-                break;
-            
-            case GameModeManager.GameMode.GrandPrix:
-                LevelManager.SetTime(go.GetTime());
-                LevelManager.SetPlace(place);
-                LevelManager.SetLevelName(gameObject.scene.name);
-                GPManager.IncrementIndex();
-                
-                //A changer avec plus de bots
-                GPManager.AddPoints(place == 1 ? 10 : 2);
-                GPManager.AddTime(go.GetTime());
-                break;
+            SceneController.GoToScene("GPEnd");
+        }
+        else
+        {
+            SceneController.GoToScene("BetweenRaces");
         }
     }
 
     private IEnumerator OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!LevelManager.GetMultiplayer())
         {
-            IsFinished = true;
-            Timer.timerIsRunning = false;
-            LevelSetupStats();
-            yield return new WaitForSeconds(3f);
-            if (gameObject.scene.name == "lvl5")
+            if (other.gameObject.CompareTag("Player"))
             {
-                SceneController.GoToScene("GPEnd");
+                P1Finished = true;
+                Timer.timerIsRunningP1 = false;
+                LevelSetupStats(1);
+                yield return new WaitForSeconds(1.5f);
+                NextScene();
             }
             else
             {
-                NextScene();
+                //BOT STATS TO MAKE
+                place++;
+                Destroy(other.gameObject);
             }
         }
-        else
+        else if (LevelManager.GetMultiplayer())
         {
-            place++;
-            Destroy(other.gameObject);
+            if (other.gameObject.CompareTag("Player"))
+            {
+                P1Finished = true;
+                Timer.timerIsRunningP1 = false;
+                LevelSetupStats(1);
+                place++;
+                yield return new WaitForSeconds(1.5f);
+                if (P1Finished && P2Finished)
+                {
+                    NextScene();
+                }
+            }
+            else if (other.gameObject.CompareTag("Player2"))
+            {
+                P2Finished = true;
+                Timer.timerIsRunningP2 = false;
+                LevelSetupStats(2);
+                place++;
+                yield return new WaitForSeconds(1.5f);
+                if (P1Finished && P2Finished)
+                {
+                    NextScene();
+                }
+            }
+            else
+            {
+                //BOT STATS TO MAKE
+                place++;
+                Destroy(other.gameObject);
+            }
         }
+
+
     }
 }

@@ -3,37 +3,64 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    private float timeElapsed = 0f;
-    public static bool timerIsRunning;
+    private float timeElapsedP1 = 0f;
+    private float timeElapsedP2 = 0f;
+    public static bool timerIsRunningP1;
+    public static bool timerIsRunningP2;
     private string text;
-    [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private TextMeshProUGUI timeValueP1;
+    [SerializeField] private TextMeshProUGUI timeValueP2;
     
     private void Start()
     {
         // Starts the timer automatically
-        timerIsRunning = true;
+        timerIsRunningP1 = true;
+        timerIsRunningP2 = true;
     }
     
     void Update()
     {
-        if (timerIsRunning)
+        if (timerIsRunningP1)
         {
-            timeElapsed += Time.deltaTime;
-            DisplayTime(timeElapsed);
+            timeElapsedP1 += Time.deltaTime;
+            DisplayTimeP1(timeElapsedP1);
+        }
+
+        if (timerIsRunningP2)
+        {
+            timeElapsedP2 += Time.deltaTime;
+            DisplayTimeP2(timeElapsedP2);
         }
     }
 
-    public float GetTime()
+    public float GetTime(int player)
     {
-        return timeElapsed;
+        switch (player)
+        {
+            case 1:
+                return timeElapsedP1;
+            case 2:
+                return timeElapsedP2;
+            default:
+                return timeElapsedP1;
+        }
     }
     
-    void DisplayTime(float timeToDisplay)
+    void DisplayTimeP1(float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         text = $"{minutes:00}:{seconds:00}";
-        timeText.text = text;
+        timeValueP1.text = text;
+    }
+    
+    void DisplayTimeP2(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        text = $"{minutes:00}:{seconds:00}";
+        timeValueP2.text = text;
     }
 }

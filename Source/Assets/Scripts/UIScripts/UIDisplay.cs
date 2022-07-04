@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class UIDisplay : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI velValue;
-    [SerializeField] private Rigidbody rig;
+    [SerializeField] private TextMeshProUGUI velValueP1;
+    [SerializeField] private Rigidbody rigP1;
+    [SerializeField] private TextMeshProUGUI velValueP2;
+    [SerializeField] private Rigidbody rigP2;
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        velValue.text = $"{Mathf.Round(rig.velocity.magnitude)}";
+        velValueP1.text = $"{Mathf.Round(rigP1.velocity.magnitude)}";
+        velValueP2.text = $"{Mathf.Round(rigP2.velocity.magnitude)}";
     }
 }

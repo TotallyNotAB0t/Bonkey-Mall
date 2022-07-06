@@ -10,6 +10,7 @@ public class MainMenuScript : BasicMenu
         if (gameObject.scene.name == "MainMenu")
         {
             GameModeManager.ResetGameMode();
+            GPManager.ResetGPStats();
         }
     }
 

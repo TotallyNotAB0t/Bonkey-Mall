@@ -30,6 +30,11 @@ public class BetweenRacesManager : MonoBehaviour
             a4.text = $"Place : {LevelManager.GetPlaceP2()}";
             a5.text = $"Time : {LevelManager.GetTimeP2()}"; 
         }
+        else
+        {
+            a4.gameObject.SetActive(false);
+            a5.gameObject.SetActive(false);
+        }
     }
 
     public void NextRace()

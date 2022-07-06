@@ -8,17 +8,17 @@ public class GPManager : MonoBehaviour
     private static float totalTimeP1;
     private static float totalTimeP2;
     private static int levelIndex = 1;
-    [SerializeField] private TextMeshProUGUI TextPointsP1;
-    [SerializeField] private TextMeshProUGUI TextPointsP2;
-    [SerializeField] private TextMeshProUGUI TextTimeP1;
-    [SerializeField] private TextMeshProUGUI TextTimeP2;
+    [SerializeField] private TextMeshProUGUI PointsValP1;
+    [SerializeField] private TextMeshProUGUI PointsValP2;
+    [SerializeField] private TextMeshProUGUI TimeValP1;
+    [SerializeField] private TextMeshProUGUI TimeValP2;
 
     private void Start()
     {
-        TextPointsP1.text = GetPointsP1().ToString();
-        TextPointsP2.text = GetPointsP2().ToString();
-        TextTimeP1.text = GetTimeP1().ToString();
-        TextTimeP2.text = GetTimeP2().ToString();
+        PointsValP1.text = GetPointsP1().ToString();
+        PointsValP2.text = GetPointsP2().ToString();
+        TimeValP1.text = GetTimeP1().ToString();
+        TimeValP2.text = GetTimeP2().ToString();
     }
 
     public static int GetPointsP1()
@@ -94,5 +94,14 @@ public class GPManager : MonoBehaviour
     public static void ResetTimeP2()
     {
         totalTimeP2 = 0;
+    }
+
+    public static void ResetGPStats()
+    {
+        ResetIndex();
+        ResetPointsP1();
+        ResetPointsP2();
+        ResetTimeP1();
+        ResetTimeP2();
     }
 }

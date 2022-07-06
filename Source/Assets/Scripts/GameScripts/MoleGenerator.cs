@@ -16,7 +16,7 @@ public class MoleGenerator : MonoBehaviour
         var go = Instantiate(molePrefab, sourceMole, false);
         go.transform.SetParent(null);
         MoveGenerator();
-        Invoke(nameof(InstantiateMole), Random.Range(1.5f, 3f));
+        Invoke(nameof(InstantiateMole), Random.Range(0.5f, 1.5f));
         Destroy(go, 5f);
     }
 

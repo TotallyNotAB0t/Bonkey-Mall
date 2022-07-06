@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     private static int LevelPlaceP2;
     private static bool IsMultiplayer;
 
-    public static void SetMultiplayer(bool multi)
+    public void SetMultiplayer(bool multi)
     {
         IsMultiplayer = multi;
     }

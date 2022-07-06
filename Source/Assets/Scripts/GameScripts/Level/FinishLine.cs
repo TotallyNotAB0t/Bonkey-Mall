@@ -24,7 +24,6 @@ public class FinishLine : MonoBehaviour
         LevelManager.SetLevelName(gameObject.scene.name);
 
         if (GameModeManager.CurrentLevelGamemode != GameModeManager.GameMode.GrandPrix) return;
-        GPManager.IncrementIndex();
         //A changer avec plus de bots
         if (player == 1)
         {
@@ -56,9 +55,11 @@ public class FinishLine : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                other.gameObject.SetActive(false);
                 P1Finished = true;
                 Timer.timerIsRunningP1 = false;
                 LevelSetupStats(1);
+                GPManager.IncrementIndex();
                 yield return new WaitForSeconds(1.5f);
                 NextScene();
             }
@@ -73,6 +74,7 @@ public class FinishLine : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                other.gameObject.SetActive(false);
                 P1Finished = true;
                 Timer.timerIsRunningP1 = false;
                 LevelSetupStats(1);
@@ -80,11 +82,13 @@ public class FinishLine : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 if (P1Finished && P2Finished)
                 {
+                    GPManager.IncrementIndex();
                     NextScene();
                 }
             }
             else if (other.gameObject.CompareTag("Player2"))
             {
+                other.gameObject.SetActive(false);
                 P2Finished = true;
                 Timer.timerIsRunningP2 = false;
                 LevelSetupStats(2);
@@ -92,6 +96,7 @@ public class FinishLine : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
                 if (P1Finished && P2Finished)
                 {
+                    GPManager.IncrementIndex();
                     NextScene();
                 }
             }
@@ -102,7 +107,5 @@ public class FinishLine : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
-
-
     }
 }

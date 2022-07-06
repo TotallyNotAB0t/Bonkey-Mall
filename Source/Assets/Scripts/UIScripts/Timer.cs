@@ -38,11 +38,11 @@ public class Timer : MonoBehaviour
         switch (player)
         {
             case 1:
-                return timeElapsedP1;
+                return Mathf.Round(timeElapsedP1);
             case 2:
-                return timeElapsedP2;
+                return Mathf.Round(timeElapsedP2);
             default:
-                return timeElapsedP1;
+                return Mathf.Round(timeElapsedP1);
         }
     }
     

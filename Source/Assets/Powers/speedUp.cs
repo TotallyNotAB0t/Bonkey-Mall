@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class speedUp : MonoBehaviour
 {
-
     [SerializeField] private GameObject player;
 
     [SerializeField] private GameObject bot1;

@@ -75,7 +75,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 34138971770880
-    m_Localized: Retour
+    m_Localized: Quitter
     m_Metadata:
       m_Items: []
   - m_Id: 16998587630510080
@@ -132,6 +132,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 25091615124369408
     m_Localized: Course unique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25803401108664320
+    m_Localized: Niveau 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25803424223473664
+    m_Localized: Niveau 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804884592046080
+    m_Localized: "Qualit\xE9 basse"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804925452955648
+    m_Localized: "Qualit\xE9 medium"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804950216126464
+    m_Localized: "Haut qualit\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25805459593375744
+    m_Localized: Menu principal
     m_Metadata:
       m_Items: []
   references:

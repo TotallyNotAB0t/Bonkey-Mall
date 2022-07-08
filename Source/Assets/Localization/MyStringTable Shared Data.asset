@@ -131,6 +131,32 @@ MonoBehaviour:
     m_Key: MainMenu/SettingCanva/SingleRace/SingleText 1
     m_Metadata:
       m_Items: []
+  - m_Id: 25803401108664320
+    m_Key: MainMenu/LevelCanva/Level5/LevelText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25803424223473664
+    m_Key: MainMenu/LevelCanva/Level4/LevelText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804884592046080
+    m_Key: NewPrefabScene/NewPrefabScene/Pause Camera/OptionCanvas/OptionObject/Dropdown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804925452955648
+    m_Key: NewPrefabScene/NewPrefabScene/Pause Camera/OptionCanvas/OptionObject/Dropdown
+      1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25804950216126464
+    m_Key: NewPrefabScene/NewPrefabScene/Pause Camera/OptionCanvas/OptionObject/Dropdown
+      2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25805459593375744
+    m_Key: NewPrefabScene/NewPrefabScene/Pause Camera/PauseCanvas/PauseObject/MenuButton/MenuText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

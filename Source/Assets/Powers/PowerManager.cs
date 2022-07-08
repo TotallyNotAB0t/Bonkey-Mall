@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,14 +5,12 @@ using Random = UnityEngine.Random;
 
 public class PowerManager : MonoBehaviour
 {
-    [SerializeField] private Material PUBlockO;
     [SerializeField] private Material PUBlockU;
     [SerializeField] private Material PUSpeedD;
     [SerializeField] private Material PUSpeedU;
     
     private enum PowerState
     {
-        BlOCKOTHER,
         BLOCKYOU,
         SPEEDUP,
         SPEEDDOWN
@@ -26,12 +23,16 @@ public class PowerManager : MonoBehaviour
         InvokeRepeating(nameof(SwitchState), 0, 3);
     }
 
+    private void Update()
+    {
+        transform.Rotate(0, 0.5f, 0);
+    }
+
     private void SwitchState()
     {
         state = (PowerState)Random.Range(0, 4);
         GetComponent<MeshRenderer>().material = state switch
         {
-            PowerState.BlOCKOTHER => PUBlockO,
             PowerState.BLOCKYOU => PUBlockU,
             PowerState.SPEEDUP => PUSpeedU,
             PowerState.SPEEDDOWN => PUSpeedD,
@@ -79,7 +80,6 @@ public class PowerManager : MonoBehaviour
                 PowerState.SPEEDDOWN => speedorigin / 2,
                 _ => ag.speed
             };
-            ag.speed = 0;
             yield return new WaitForSeconds(3);
             ag.speed = speedorigin;
         }

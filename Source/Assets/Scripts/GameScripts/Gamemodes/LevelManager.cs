@@ -95,6 +95,5 @@ public class LevelManager : MonoBehaviour
         LevelPlaceP1 = 0;
         LevelTimeP2 = 0;
         LevelPlaceP2 = 0;
-        
     }
 }

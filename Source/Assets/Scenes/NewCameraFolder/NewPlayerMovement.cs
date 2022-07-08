@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
 { 
-    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed = 20;
+    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed = 10;
     [SerializeField] private Rigidbody rig;
     [SerializeField] private Transform cam;
+    private Vector3 actualDirection;
     private Vector3 inputAxis;
     private Vector3 cameraFacing;
 
     private void PlayerMovement()
     {
         rig.AddForce(cameraFacing * moveSpeed);
+        rig.AddForce(actualDirection * moveSpeed);
     }
 
     private void GetPlayerInput()
@@ -26,6 +28,10 @@ public class NewPlayerMovement : MonoBehaviour
         }
         //Getting straight vector
         cameraFacing = new Vector3(cam.forward.x, 0, cam.forward.z) * inputAxis.z;
+        
+        Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        actualDirection = Vector3.ProjectOnPlane(cam.TransformDirection(controlDirection), 
+            Vector3.up);
     }
 
     //Getting user input

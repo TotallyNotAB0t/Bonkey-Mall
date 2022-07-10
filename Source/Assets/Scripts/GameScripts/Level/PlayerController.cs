@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
+    /*[Range(1.0f, 20f)] [SerializeField] private float moveSpeed;
     [SerializeField] private Rigidbody rig;
     [SerializeField] private Transform camPlayer;
     private Vector3 force;
@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour
     {
         //Follows the axis of the camera rather than the default ones
         Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        actualDirection = Vector3.ProjectOnPlane(camPlayer.TransformDirection(controlDirection), 
-            Vector3.up);
+        actualDirection = camPlayer.TransformDirection(controlDirection);
+        /*actualDirection = Vector3.ProjectOnPlane(camPlayer.TransformDirection(controlDirection), 
+            Vector3.up);#1#
     }
 
     //Getting user input
@@ -31,5 +32,5 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerMovement();
-    }
+    }*/
 }

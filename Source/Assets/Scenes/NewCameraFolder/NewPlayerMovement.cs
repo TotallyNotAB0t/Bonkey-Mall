@@ -11,7 +11,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void PlayerMovement()
     {
-        rig.AddForce(cameraFacing * moveSpeed);
+        //rig.AddForce(cameraFacing * moveSpeed);
         rig.AddForce(actualDirection * moveSpeed);
     }
 
@@ -27,11 +27,11 @@ public class NewPlayerMovement : MonoBehaviour
             inputAxis = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2")); 
         }
         //Getting straight vector
-        cameraFacing = new Vector3(cam.forward.x, 0, cam.forward.z) * inputAxis.z;
-        
-        Vector3 controlDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        actualDirection = Vector3.ProjectOnPlane(cam.TransformDirection(controlDirection), 
-            Vector3.up);
+        //cameraFacing = new Vector3(inputAxis.x, 0, inputAxis.z);
+
+        actualDirection = cam.TransformDirection(inputAxis);
+        /*actualDirection = Vector3.ProjectOnPlane(cam.TransformDirection(controlDirection), 
+            Vector3.up);*/
     }
 
     //Getting user input

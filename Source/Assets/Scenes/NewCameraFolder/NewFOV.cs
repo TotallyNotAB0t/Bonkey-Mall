@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class NewFOV : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer moleP1;
+    [SerializeField] private SpriteRenderer moleP2;
     [SerializeField] private CinemachineFreeLook cam1POV;
     [SerializeField] private CinemachineFreeLook cam1;
     [SerializeField] private CinemachineFreeLook cam1Wide;
@@ -16,12 +18,14 @@ public class NewFOV : MonoBehaviour
         if (player1)
         {
             cam1POV.gameObject.SetActive(cam == 0);
+            moleP1.enabled = cam != 0;
             cam1.gameObject.SetActive(cam == 1);
             cam1Wide.gameObject.SetActive(cam == 2);
         }
         else
         {
             cam2POV.gameObject.SetActive(cam == 3);
+            moleP2.enabled = cam != 3;
             cam2.gameObject.SetActive(cam == 4);
             cam2Wide.gameObject.SetActive(cam == 5);
         }

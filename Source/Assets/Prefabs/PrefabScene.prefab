@@ -1454,7 +1454,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4193585611655062059}
-  - component: {fileID: 4193585611655062056}
   m_Layer: 0
   m_Name: CenterRotation
   m_TagString: Untagged
@@ -1478,21 +1477,6 @@ Transform:
   m_Father: {fileID: 7978415007068502604}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4193585611655062056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4193585611655062058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3868f97c7bdd2bc4a92d90e12fbda19a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rBplayer: {fileID: 7021411547115283782}
-  cameraPlayer: {fileID: 7021411545619400730}
-  smoothness: 0.01
 --- !u!1 &4193585612507439389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3676,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7021411546133321828}
-  - component: {fileID: 7021411546133321831}
   - component: {fileID: 7021411546133321830}
   - component: {fileID: 7021411546133321849}
   - component: {fileID: 7021411546133321829}
@@ -3721,21 +3704,6 @@ Transform:
   m_Father: {fileID: 7978415007068502604}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7021411546133321831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7021411546133321826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad612ddd3cf434459ebe4a317d09b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  rig: {fileID: 7021411547115283782}
-  camPlayer: {fileID: 7021411545619400733}
 --- !u!114 &7021411546133321830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,8 +3729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d106b99c70da8fb4098e60d3bbfe888d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velValue: {fileID: 7021411547271853659}
-  rig: {fileID: 7021411547115283782}
+  velValueP1: {fileID: 0}
+  rigP1: {fileID: 0}
+  velValueP2: {fileID: 0}
+  rigP2: {fileID: 0}
 --- !u!114 &7021411546133321829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3803,7 +3773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99423c08f5a4a0438c772adb843b5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 3669820213811741881}
+  timeValueP1: {fileID: 0}
+  timeValueP2: {fileID: 0}
 --- !u!114 &8707193091648677760
 MonoBehaviour:
   m_ObjectHideFlags: 0

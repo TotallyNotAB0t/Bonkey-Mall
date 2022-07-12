@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class NewPlayerMovement : MonoBehaviour
 { 
     [Range(1.0f, 20f)] [SerializeField] private float moveSpeed = 10;

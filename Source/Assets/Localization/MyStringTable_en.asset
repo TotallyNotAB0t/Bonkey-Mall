@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 18575160903274496
-    m_Localized: Share
+    m_Localized: Share on Facebook
     m_Metadata:
       m_Items: []
   - m_Id: 18575578735644672
@@ -156,6 +156,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 25805459593375744
     m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27187348408700928
+    m_Localized: Share on Twitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27194334105899008
+    m_Localized: 'P1 - Time : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27194361633116160
+    m_Localized: 'P2 - Time : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27194395481149440
+    m_Localized: 'Level : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27258135392096256
+    m_Localized: 'P1 Total Points : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27258186436775936
+    m_Localized: 'P2 Total Points : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27258220393861120
+    m_Localized: 'P2 Total time : '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27258254694879232
+    m_Localized: 'P1 Total time : '
     m_Metadata:
       m_Items: []
   references:

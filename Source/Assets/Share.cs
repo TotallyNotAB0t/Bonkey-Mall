@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Author : Theo
 public class Share : MonoBehaviour 
 {
     /*TWITTER*/
@@ -23,7 +23,6 @@ public class Share : MonoBehaviour
     // Facebook Share Button
     public void shareScoreOnFacebook ()
     {
-        ScreenCapture.CaptureScreenshot("SomeLevel");
         if (LevelManager.GetPlaceP1() == 1)
         {
             Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureFirst);

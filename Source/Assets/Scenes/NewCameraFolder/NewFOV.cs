@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
+//Author : Pierre
 public class NewFOV : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer moleP1;

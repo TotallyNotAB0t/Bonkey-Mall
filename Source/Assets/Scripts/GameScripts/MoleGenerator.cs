@@ -1,6 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//Author : Pierre
 public class MoleGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject molePrefab;

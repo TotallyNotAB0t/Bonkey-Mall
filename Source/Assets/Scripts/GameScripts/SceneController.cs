@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Author : Pierre
 public class SceneController : MonoBehaviour
 {
     public static void GoToScene(string sceneName)

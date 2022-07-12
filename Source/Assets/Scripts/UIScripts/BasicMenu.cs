@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
+//Author : Pierre
 public class BasicMenu : MonoBehaviour
 {
     public void QuitGame()

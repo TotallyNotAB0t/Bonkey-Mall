@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class MultiplayerManager : MonoBehaviour
 {
     [SerializeField] private GameObject player1Object;

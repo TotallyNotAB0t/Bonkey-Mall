@@ -1672,7 +1672,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474895921}
-  - component: {fileID: 1474895922}
   m_Layer: 0
   m_Name: CenterRotation
   m_TagString: Untagged
@@ -1696,21 +1695,6 @@ Transform:
   m_Father: {fileID: 6092136403619821654}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1474895922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474895920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3868f97c7bdd2bc4a92d90e12fbda19a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rBplayer: {fileID: 6576253248362735452}
-  cameraPlayer: {fileID: 6576253249818593792}
-  smoothness: 0.01
 --- !u!1 &1503102613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1762,10 +1746,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe9af8d299107c459bfdda97e6cad93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockOScript: {fileID: 1503102614}
-  blockUScript: {fileID: 1503102622}
-  speedUScript: {fileID: 1503102621}
-  speedDScript: {fileID: 1503102620}
+  PUBlockU: {fileID: 0}
+  PUSpeedD: {fileID: 0}
+  PUSpeedU: {fileID: 0}
 --- !u!65 &1503102616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4872,7 +4855,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6576253249325685374}
-  - component: {fileID: 6576253249325685373}
   - component: {fileID: 6576253249325685372}
   - component: {fileID: 6576253249325685347}
   - component: {fileID: 6576253249325685375}
@@ -4897,21 +4879,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 6576253248583663862}
---- !u!114 &6576253249325685373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6576253249325685368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad612ddd3cf434459ebe4a317d09b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  rig: {fileID: 6576253248362735452}
-  camPlayer: {fileID: 6576253249818593799}
 --- !u!4 &6576253249325685374
 Transform:
   m_ObjectHideFlags: 0

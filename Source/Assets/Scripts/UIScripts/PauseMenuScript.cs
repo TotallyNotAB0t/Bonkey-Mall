@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class PauseMenuScript : BasicMenu
 {
     [SerializeField] private GameObject pauseMenu;

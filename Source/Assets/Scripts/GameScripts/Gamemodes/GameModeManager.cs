@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class GameModeManager : MonoBehaviour
 {
     public enum GameMode

@@ -1,15 +1,12 @@
 using TMPro;
 using UnityEngine;
 
+//Author : Pierre
 public class BetweenRacesManager : MonoBehaviour
 {
     [SerializeField] private GameObject SingleLevel;
     [SerializeField] private GameObject GPLevel;
-    public TextMeshProUGUI a1;
-    public TextMeshProUGUI a2;
-    public TextMeshProUGUI a3;
-    public TextMeshProUGUI a4;
-    public TextMeshProUGUI a5;
+    [SerializeField] private TextMeshProUGUI a1, a2, a3, a4, a5, a6;
 
     private void Start()
     {
@@ -22,18 +19,19 @@ public class BetweenRacesManager : MonoBehaviour
                 GPLevel.SetActive(true);
                 break;
         }
-        a1.text = $"Level : {LevelManager.GetLevelName()}";
-        a2.text = $"Place : {LevelManager.GetPlaceP1()}";
-        a3.text = $"Time : {LevelManager.GetTimeP1()}";
+        a1.text += LevelManager.GetLevelName();
+        a3.text = $"{LevelManager.GetTimeP1()}";
+        a2.text += LevelManager.GetPlaceP1();
+
         if (LevelManager.GetMultiplayer())
         {
-            a4.text = $"Place : {LevelManager.GetPlaceP2()}";
-            a5.text = $"Time : {LevelManager.GetTimeP2()}"; 
+            a4.text += LevelManager.GetPlaceP2();
+            a5.text = $"{LevelManager.GetTimeP2()}"; 
         }
         else
         {
             a4.gameObject.SetActive(false);
-            a5.gameObject.SetActive(false);
+            a6.gameObject.SetActive(false);
         }
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+//Author : Pierre
 public class VolumeController : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;

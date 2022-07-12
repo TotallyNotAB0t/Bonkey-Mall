@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+//Author : Pierre
 public class GPManager : MonoBehaviour
 {
     private static int totalPointP1;
@@ -8,17 +9,23 @@ public class GPManager : MonoBehaviour
     private static float totalTimeP1;
     private static float totalTimeP2;
     private static int levelIndex = 1;
-    [SerializeField] private TextMeshProUGUI PointsValP1;
-    [SerializeField] private TextMeshProUGUI PointsValP2;
-    [SerializeField] private TextMeshProUGUI TimeValP1;
-    [SerializeField] private TextMeshProUGUI TimeValP2;
+    [SerializeField] private TextMeshProUGUI PointsValP1, PointsValP2, TimeValP1, TimeValP2, P2P, P2T;
 
     private void Start()
     {
-        PointsValP1.text = GetPointsP1().ToString();
-        PointsValP2.text = GetPointsP2().ToString();
-        TimeValP1.text = GetTimeP1().ToString();
-        TimeValP2.text = GetTimeP2().ToString();
+        PointsValP1.text = $"{GetPointsP1()}";
+        TimeValP1.text = $"{GetTimeP1()}";
+        
+        if (LevelManager.GetMultiplayer())
+        {
+            PointsValP2.text = $"{GetPointsP2()}";
+            TimeValP2.text = $"{GetTimeP2()}";
+        }
+        else
+        {
+            P2P.gameObject.SetActive(false);
+            P2T.gameObject.SetActive(false);
+        }
     }
 
     public static int GetPointsP1()

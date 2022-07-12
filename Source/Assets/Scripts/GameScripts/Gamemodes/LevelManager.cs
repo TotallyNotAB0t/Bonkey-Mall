@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class LevelManager : MonoBehaviour
 {
     public enum Difficulty

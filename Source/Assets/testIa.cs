@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+//Author : Pierre
 public class testIa : MonoBehaviour
 {
     public GameObject gol;

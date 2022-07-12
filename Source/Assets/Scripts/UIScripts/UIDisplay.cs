@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+//Author : Pierre
 public class UIDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI velValueP1;

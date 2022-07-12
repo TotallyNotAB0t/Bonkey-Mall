@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform lastCP;

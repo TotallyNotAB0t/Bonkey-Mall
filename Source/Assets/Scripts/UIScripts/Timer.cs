@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+//Author : Pierre
 public class Timer : MonoBehaviour
 {
     private float timeElapsedP1 = 0f;

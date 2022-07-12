@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+//Author : Pierre
 public class FinishLine : MonoBehaviour
 {
     private int place = 1;

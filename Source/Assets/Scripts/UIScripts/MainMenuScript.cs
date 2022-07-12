@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class MainMenuScript : BasicMenu
 {
     [SerializeField] private GameObject[] panels;

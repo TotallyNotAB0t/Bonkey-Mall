@@ -39,7 +39,6 @@ public class NewPlayerMovement : MonoBehaviour
     private void Update()
     {
         GetPlayerInput();
-        Debug.DrawLine(Vector3.zero, actualDirection, Color.red);
     }
 
     //Applying user input

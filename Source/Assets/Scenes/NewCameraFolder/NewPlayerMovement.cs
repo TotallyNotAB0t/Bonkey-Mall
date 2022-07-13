@@ -27,18 +27,19 @@ public class NewPlayerMovement : MonoBehaviour
         {
             inputAxis = new Vector3(Input.GetAxis("HorizontalP2"), 0, Input.GetAxis("VerticalP2")); 
         }
-        //Getting straight vector
-        //cameraFacing = new Vector3(inputAxis.x, 0, inputAxis.z);
-
+        
+        //Using the coordinates of the camera rather than the world's one
         actualDirection = cam.TransformDirection(inputAxis);
-        /*actualDirection = Vector3.ProjectOnPlane(cam.TransformDirection(controlDirection), 
-            Vector3.up);*/
+        
+        //Flatten the vector so the added force is not modified by the camera's angle
+        actualDirection = Vector3.ProjectOnPlane(actualDirection, Vector3.up);
     }
 
     //Getting user input
     private void Update()
     {
         GetPlayerInput();
+        Debug.DrawLine(Vector3.zero, actualDirection, Color.red);
     }
 
     //Applying user input

@@ -49,15 +49,15 @@ public class NewFOV : MonoBehaviour
         }
         
         //P2 cameras
-        if (Input.GetKeyDown(KeyCode.Delete))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ChangeCam(false,3);
         }
-        else if (Input.GetKeyDown(KeyCode.End))
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             ChangeCam(false,4);
         }
-        else if (Input.GetKeyDown(KeyCode.PageDown))
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             ChangeCam(false,5);
         }

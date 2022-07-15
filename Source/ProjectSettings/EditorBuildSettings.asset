@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/GPEnd.unity
     guid: 7d2c311b7f7684a41a1ae035239b0d53
+  - enabled: 1
+    path: Assets/Scenes/FootMode/Foot.unity
+    guid: 5111e04821cd98342ab7b3f4c27ea9e6
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: eb2c4b7786f1f12449ed63dacde1c572, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8b01edff7305a9f4d99f24ace64a2f41, type: 2}

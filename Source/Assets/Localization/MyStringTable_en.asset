@@ -190,6 +190,30 @@ MonoBehaviour:
     m_Localized: 'P1 Total time : '
     m_Metadata:
       m_Items: []
+  - m_Id: 28381674866282496
+    m_Localized: Player 2 won !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381715769135104
+    m_Localized: Player 1 won !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381906861625344
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28382459255656448
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28388395827400704
+    m_Localized: Race
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28390308937535488
+    m_Localized: Race
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

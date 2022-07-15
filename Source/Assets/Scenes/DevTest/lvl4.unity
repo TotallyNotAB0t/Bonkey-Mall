@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b08a3c6a04a91a746ae531b2461b5d3c, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1213,15 +1213,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6082598286377442712, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12059503
+      value: 0.1386318
       objectReference: {fileID: 0}
     - target: {fileID: 6082598286377442712, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000030959662
+      value: -1.9720002e-16
       objectReference: {fileID: 0}
     - target: {fileID: 6082598286377442712, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.7611056e-10
+      value: 1.4087378e-15
       objectReference: {fileID: 0}
     - target: {fileID: 6082598286604396177, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1353,11 +1353,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6082598287293112837, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12059503
+      value: 0.1386318
       objectReference: {fileID: 0}
     - target: {fileID: 6082598287293112837, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1e-45
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 6082598287293112837, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: m_LocalRotation.z

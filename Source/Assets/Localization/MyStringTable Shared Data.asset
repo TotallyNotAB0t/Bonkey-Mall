@@ -189,6 +189,30 @@ MonoBehaviour:
     m_Key: GPEnd/Canvas/TimeTxtP1
     m_Metadata:
       m_Items: []
+  - m_Id: 28381674866282496
+    m_Key: Foot/Canvas/P2Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381715769135104
+    m_Key: Foot/Canvas/P1Win
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381906861625344
+    m_Key: Foot/Canvas/RaplayBtn/ReplayTxt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28382459255656448
+    m_Key: Foot/Canvas/Button/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28388395827400704
+    m_Key: MainMenu/MenuCanva/PlayButton/PlayText 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28390308937535488
+    m_Key: MainMenu/MenuCanva/RaceBtn/RaceTxt
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

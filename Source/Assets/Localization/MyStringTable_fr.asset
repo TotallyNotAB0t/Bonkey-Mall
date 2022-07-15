@@ -190,6 +190,30 @@ MonoBehaviour:
     m_Localized: 'P1 Temps Total : '
     m_Metadata:
       m_Items: []
+  - m_Id: 28381674866282496
+    m_Localized: "Le joueur 2 a gagn\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381715769135104
+    m_Localized: "Le joueur 1 a gagn\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28381906861625344
+    m_Localized: Rejouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28382459255656448
+    m_Localized: Rejouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28388395827400704
+    m_Localized: Foot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28390308937535488
+    m_Localized: Course
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

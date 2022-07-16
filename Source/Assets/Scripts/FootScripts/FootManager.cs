@@ -2,10 +2,12 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 
+//Class handling the Foot gamemode
 public class FootManager : MonoBehaviour
 {
     private static int P1Score, P2Score;
-    [SerializeField] private GameObject GameObj, EndObj; 
+    [SerializeField] private GameObject GameObj, EndObj;
+    
     [SerializeField] private TextMeshProUGUI playerOneScore;
     [SerializeField] private TextMeshProUGUI playerTwoScore;
 
@@ -38,6 +40,7 @@ public class FootManager : MonoBehaviour
         playerTwoScore.text = $"{P2Score}";
     }
 
+    //Reset the position of the players and the ball, and their speed to 0
     private void ResetAllPositions()
     {
         playerOne.position = new Vector3(0, 20, -10);
@@ -48,6 +51,7 @@ public class FootManager : MonoBehaviour
         wotaMelon.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
+    //Switching to the end panel
     private void Winning()
     {
         Destroy(GameObj);
@@ -83,11 +87,5 @@ public class FootManager : MonoBehaviour
             return;
         }
         ResetAllPositions();
-    }
-
-    private void Awake()
-    {
-        var instance = gameObject.AddComponent<LevelManager>();
-        instance.SetMultiplayer(true);
     }
 }

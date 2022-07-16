@@ -8,7 +8,7 @@ public class BallManager : MonoBehaviour
     [SerializeField] private float explosionForceWall;
     [SerializeField] private float explosionRadiusWall;
     
-    
+    //Depending on the collision, adds a force to the ball
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player2"))

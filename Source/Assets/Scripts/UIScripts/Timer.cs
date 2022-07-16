@@ -12,14 +12,15 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeValueP1;
     [SerializeField] private TextMeshProUGUI timeValueP2;
     
+    // Starts the timer automatically
     private void Start()
     {
-        // Starts the timer automatically
         timerIsRunningP1 = true;
         timerIsRunningP2 = true;
     }
     
-    void Update()
+    //The time continues while we don't reach the end
+    private void Update()
     {
         if (timerIsRunningP1)
         {
@@ -34,20 +35,17 @@ public class Timer : MonoBehaviour
         }
     }
 
+    //Rounds the float values
     public float GetTime(int player)
     {
-        switch (player)
+        return player switch
         {
-            case 1:
-                return Mathf.Round(timeElapsedP1);
-            case 2:
-                return Mathf.Round(timeElapsedP2);
-            default:
-                return Mathf.Round(timeElapsedP1);
-        }
+            1 => Mathf.Round(timeElapsedP1),
+            2 => Mathf.Round(timeElapsedP2)
+        };
     }
-    
-    void DisplayTimeP1(float timeToDisplay)
+
+    private void DisplayTimeP1(float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
@@ -55,8 +53,8 @@ public class Timer : MonoBehaviour
         text = $"{minutes:00}:{seconds:00}";
         timeValueP1.text = text;
     }
-    
-    void DisplayTimeP2(float timeToDisplay)
+
+    private void DisplayTimeP2(float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 

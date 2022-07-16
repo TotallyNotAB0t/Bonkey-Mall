@@ -2,17 +2,16 @@ using UnityEngine;
 using UnityEngine.AI;
 
 //Author : Pierre
-public class testIa : MonoBehaviour
+public class AISetup : MonoBehaviour
 {
-    public GameObject gol;
-
-    public GameObject bol;
+    [SerializeField] private GameObject goal;
+    [SerializeField] private GameObject ball;
     
-    // Start is called before the first frame update
+    //Enabling the IA and setting up its speed, or destroying it without bots
     private void Start()
     {
-        NavMeshAgent agent = bol.GetComponent<NavMeshAgent>();
-        agent.destination = gol.transform.position;
+        NavMeshAgent agent = ball.GetComponent<NavMeshAgent>();
+        agent.destination = goal.transform.position;
         switch (LevelManager.GetDifficulty())
         {
             case LevelManager.Difficulty.None:

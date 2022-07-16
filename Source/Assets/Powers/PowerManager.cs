@@ -3,12 +3,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
+//Class handlind the powerups
 public class PowerManager : MonoBehaviour
 {
     [SerializeField] private Material PUBlockU;
     [SerializeField] private Material PUSpeedD;
     [SerializeField] private Material PUSpeedU;
     
+    //Enumeration of the actual state of our powerup
     private enum PowerState
     {
         BLOCKYOU,
@@ -18,11 +20,13 @@ public class PowerManager : MonoBehaviour
 
     private PowerState state;
 
+    //Every 3 seconds, the state of the powerup changes (it can stay the same)
     private void Start()
     {
         InvokeRepeating(nameof(SwitchState), 0, 3);
     }
-
+    
+    //Rotation of the powerup
     private void Update()
     {
         transform.Rotate(0, 0.5f, 0);
@@ -30,7 +34,7 @@ public class PowerManager : MonoBehaviour
 
     private void SwitchState()
     {
-        state = (PowerState)Random.Range(0, 4);
+        state = (PowerState)Random.Range(0, 3);
         GetComponent<MeshRenderer>().material = state switch
         {
             PowerState.BLOCKYOU => PUBlockU,
@@ -40,6 +44,7 @@ public class PowerManager : MonoBehaviour
         };
     }
 
+    //Deactivate the powerup after being picked up by a player or a bot
     private IEnumerator OnTriggerEnter(Collider other)
     {
         StartCoroutine(StartPower(other));
@@ -53,6 +58,7 @@ public class PowerManager : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
     }
 
+    //Change the speed or mass of the player / bot 
     private IEnumerator StartPower(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Player2"))
@@ -63,8 +69,7 @@ public class PowerManager : MonoBehaviour
             {
                 PowerState.BLOCKYOU => 1000f,
                 PowerState.SPEEDUP => 0.5f,
-                PowerState.SPEEDDOWN => 3f,
-                _ => rig.mass
+                PowerState.SPEEDDOWN => 3f
             };
             yield return new WaitForSeconds(3);
             rig.mass = massorigin;
@@ -77,8 +82,7 @@ public class PowerManager : MonoBehaviour
             {
                 PowerState.BLOCKYOU => 0,
                 PowerState.SPEEDUP => speedorigin * 2,
-                PowerState.SPEEDDOWN => speedorigin / 2,
-                _ => ag.speed
+                PowerState.SPEEDDOWN => speedorigin / 2
             };
             yield return new WaitForSeconds(3);
             ag.speed = speedorigin;

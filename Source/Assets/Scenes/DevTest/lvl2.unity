@@ -2259,6 +2259,14 @@ PrefabInstance:
       propertyPath: gol
       value: 
       objectReference: {fileID: 506824731}
+    - target: {fileID: 7623275099155024966, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 485190201}
+    - target: {fileID: 7623275099155024966, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
+      propertyPath: goal
+      value: 
+      objectReference: {fileID: 506824731}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
 --- !u!1 &1486120308
@@ -3027,6 +3035,14 @@ PrefabInstance:
       objectReference: {fileID: 584324151}
     - target: {fileID: 7623275099155024966, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
       propertyPath: gol
+      value: 
+      objectReference: {fileID: 506824731}
+    - target: {fileID: 7623275099155024966, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 584324151}
+    - target: {fileID: 7623275099155024966, guid: d4722defcc752f24ebc1045bd8c20978, type: 3}
+      propertyPath: goal
       value: 
       objectReference: {fileID: 506824731}
     m_RemovedComponents: []

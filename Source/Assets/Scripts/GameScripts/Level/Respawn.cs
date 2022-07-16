@@ -5,6 +5,7 @@ public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform lastCP;
 
+    //When entering the void, bring back the player to the start
     private void OnCollisionEnter(Collision collision)
     {
         TpObject(collision.gameObject.transform, lastCP);

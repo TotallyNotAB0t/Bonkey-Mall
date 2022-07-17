@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 
 //Author : Pierre
+//Class handling the points and time of the players
 public class GPManager : MonoBehaviour
 {
     private static int totalPointP1;
@@ -28,7 +29,7 @@ public class GPManager : MonoBehaviour
         }
     }
 
-    public static int GetPointsP1()
+    private static int GetPointsP1()
     {
         return totalPointP1;
     }
@@ -38,12 +39,12 @@ public class GPManager : MonoBehaviour
         totalPointP1 += points;
     }
 
-    public static void ResetPointsP1()
+    private static void ResetPointsP1()
     {
         totalPointP1 = 0;
     }
-    
-    public static int GetPointsP2()
+
+    private static int GetPointsP2()
     {
         return totalPointP2;
     }
@@ -53,7 +54,7 @@ public class GPManager : MonoBehaviour
         totalPointP2 += points;
     }
 
-    public static void ResetPointsP2()
+    private static void ResetPointsP2()
     {
         totalPointP2 = 0;
     }
@@ -68,12 +69,12 @@ public class GPManager : MonoBehaviour
         levelIndex++;
     }
 
-    public static void ResetIndex()
+    private static void ResetIndex()
     {
         levelIndex = 1;
     }
 
-    public static float GetTimeP1()
+    private static float GetTimeP1()
     {
         return totalTimeP1;
     }
@@ -83,12 +84,12 @@ public class GPManager : MonoBehaviour
         totalTimeP1 += time;
     }
 
-    public static void ResetTimeP1()
+    private static void ResetTimeP1()
     {
         totalTimeP1 = 0;
     }
-    
-    public static float GetTimeP2()
+
+    private static float GetTimeP2()
     {
         return totalTimeP2;
     }
@@ -98,7 +99,7 @@ public class GPManager : MonoBehaviour
         totalTimeP2 += time;
     }
 
-    public static void ResetTimeP2()
+    private static void ResetTimeP2()
     {
         totalTimeP2 = 0;
     }

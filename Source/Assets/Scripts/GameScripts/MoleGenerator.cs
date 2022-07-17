@@ -2,6 +2,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 //Author : Pierre
+//Small script infinitely instantiating moles for the main menu
 public class MoleGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject molePrefab;

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 
 //Author : Pierre
+//Class handling time in a race and displaying it
 public class Timer : MonoBehaviour
 {
     private float timeElapsedP1 = 0f;
@@ -25,13 +26,13 @@ public class Timer : MonoBehaviour
         if (timerIsRunningP1)
         {
             timeElapsedP1 += Time.deltaTime;
-            DisplayTimeP1(timeElapsedP1);
+            DisplayTime(1, timeElapsedP1);
         }
 
         if (timerIsRunningP2)
         {
             timeElapsedP2 += Time.deltaTime;
-            DisplayTimeP2(timeElapsedP2);
+            DisplayTime(2, timeElapsedP2);
         }
     }
 
@@ -44,22 +45,21 @@ public class Timer : MonoBehaviour
             2 => Mathf.Round(timeElapsedP2)
         };
     }
-
-    private void DisplayTimeP1(float timeToDisplay)
+    
+    private void DisplayTime(int player, float timeToDisplay)
     {
         timeToDisplay += 1;
         float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         text = $"{minutes:00}:{seconds:00}";
-        timeValueP1.text = text;
-    }
-
-    private void DisplayTimeP2(float timeToDisplay)
-    {
-        timeToDisplay += 1;
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60); 
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        text = $"{minutes:00}:{seconds:00}";
-        timeValueP2.text = text;
+        switch (player)
+        {
+            case 1:
+                timeValueP1.text = text;
+                break;
+            case 2:
+                timeValueP2.text = text;
+                break;
+        }
     }
 }

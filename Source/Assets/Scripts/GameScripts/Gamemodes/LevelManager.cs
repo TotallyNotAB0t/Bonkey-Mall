@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //Author : Pierre
+//Class storing the time, place, and difficulty for each level
 public class LevelManager : MonoBehaviour
 {
     public enum Difficulty

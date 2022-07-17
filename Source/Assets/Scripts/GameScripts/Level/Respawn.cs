@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //Author : Pierre
+//Class respawning the fallen rigidbody
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform lastCP;

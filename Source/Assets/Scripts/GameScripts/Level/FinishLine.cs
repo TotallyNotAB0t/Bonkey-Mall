@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 //Author : Pierre
+//Class attributing points to the players
 public class FinishLine : MonoBehaviour
 {
     private int place = 1;
@@ -28,12 +29,40 @@ public class FinishLine : MonoBehaviour
         //A changer avec plus de bots
         if (player == 1)
         {
-            GPManager.AddPointsP1(place == 1 ? 10 : 2);
+            switch (place)
+            {
+                case 1:
+                    GPManager.AddPointsP1(10);
+                    break;
+                case 2:
+                    GPManager.AddPointsP1(5);
+                    break;
+                case 3:
+                    GPManager.AddPointsP1(3);
+                    break;
+                case 4:
+                    GPManager.AddPointsP1(1);
+                    break;
+            }
             GPManager.AddTimeP1(go.GetTime(1));
         }
         else
         {
-            GPManager.AddPointsP2(place == 1 ? 10 : 2);
+            switch (place)
+            {
+                case 1:
+                    GPManager.AddPointsP2(10);
+                    break;
+                case 2:
+                    GPManager.AddPointsP2(5);
+                    break;
+                case 3:
+                    GPManager.AddPointsP2(3);
+                    break;
+                case 4:
+                    GPManager.AddPointsP2(1);
+                    break;
+            }
             GPManager.AddTimeP2(go.GetTime(2));
         }
     }
@@ -50,6 +79,7 @@ public class FinishLine : MonoBehaviour
         }
     }
 
+    //Stopping the timer, updating the stats and waiting for the race to end
     private IEnumerator OnTriggerEnter(Collider other)
     {
         if (!LevelManager.GetMultiplayer())
@@ -66,7 +96,6 @@ public class FinishLine : MonoBehaviour
             }
             else
             {
-                //BOT STATS TO MAKE
                 place++;
                 Destroy(other.gameObject);
             }
@@ -103,7 +132,6 @@ public class FinishLine : MonoBehaviour
             }
             else
             {
-                //BOT STATS TO MAKE
                 place++;
                 Destroy(other.gameObject);
             }

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 
 //Author : Pierre
+//Class managing the scene between GP races, or single races
 public class BetweenRacesManager : MonoBehaviour
 {
     [SerializeField] private GameObject SingleLevel;

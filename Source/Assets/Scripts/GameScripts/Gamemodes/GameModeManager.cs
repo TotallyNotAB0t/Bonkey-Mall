@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //Author : Pierre
+//Class handling the gamemode : single race or Grand Prix
 public class GameModeManager : MonoBehaviour
 {
     public enum GameMode

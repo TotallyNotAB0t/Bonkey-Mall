@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //Author : Pierre
+//Class stopping time and opening the pause menu
 public class PauseMenuScript : BasicMenu
 {
     [SerializeField] private GameObject pauseMenu;

@@ -23,7 +23,7 @@ public class PowerManager : MonoBehaviour
     //Every 3 seconds, the state of the powerup changes (it can stay the same)
     private void Start()
     {
-        InvokeRepeating(nameof(SwitchState), 0, 3);
+        InvokeRepeating(nameof(SwitchState), 0, 1);
     }
     
     //Rotation of the powerup

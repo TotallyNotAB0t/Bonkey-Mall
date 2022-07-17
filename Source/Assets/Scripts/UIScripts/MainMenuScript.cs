@@ -1,6 +1,7 @@
 using UnityEngine;
 
 //Author : Pierre
+//Multiple button events used in the menus are stored here
 public class MainMenuScript : BasicMenu
 {
     [SerializeField] private GameObject[] panels;
@@ -31,7 +32,6 @@ public class MainMenuScript : BasicMenu
             case LevelManager.Difficulty.Hard:
                 LevelManager.SetDifficulty(LevelManager.Difficulty.Hard);
                 break;
-
         }
     }
 

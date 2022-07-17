@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Localization.Settings;
 
 //Author : Pierre
+//Every UI script should inherit this class for basic events
 public class BasicMenu : MonoBehaviour
 {
     public void QuitGame()

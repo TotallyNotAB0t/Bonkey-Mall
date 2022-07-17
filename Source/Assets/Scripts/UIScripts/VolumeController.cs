@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Author : Pierre
+//Class handling the volume, persistent between games
 public class VolumeController : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;
@@ -13,7 +14,6 @@ public class VolumeController : MonoBehaviour
     }
     
     //Using playerprefs to store the value between game sessions
-
     private void SaveVolume()
     {
         PlayerPrefs.SetFloat("volumeLevel", volumeSlider.value);
@@ -34,6 +34,7 @@ public class VolumeController : MonoBehaviour
         else
         {
             LoadVolume();
+            volumeSlider.value = PlayerPrefs.GetFloat("volumeLevel");
         }
     }
 }

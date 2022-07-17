@@ -1,3 +1,4 @@
+using Cinemachine;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -28,11 +29,12 @@ public class FootManager : MonoBehaviour
         }
     }
 
-    [MenuItem("Hack/WinP1Foot")]
+    //Small script to make the game faster
+    /*[MenuItem("Hack/WinP1Foot")]
     public static void WinP1Foot()
     {
         P1Score = 4;
-    }
+    }*/
 
     private void UpdateUIScore()
     {
@@ -43,8 +45,9 @@ public class FootManager : MonoBehaviour
     //Reset the position of the players and the ball, and their speed to 0
     private void ResetAllPositions()
     {
-        playerOne.position = new Vector3(0, 20, -10);
-        playerTwo.position = new Vector3(0, 20, 10);
+        GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams();
+        playerOne.position = new Vector3(10, 20, -20);
+        playerTwo.position = new Vector3(-10, 20, 20);
         wotaMelon.position = new Vector3(0, 25, 0);
         playerOne.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
         playerTwo.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;

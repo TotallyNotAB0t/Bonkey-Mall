@@ -31,6 +31,17 @@ public class NewFOV : MonoBehaviour
             cam2Wide.gameObject.SetActive(cam == 5);
         }
     }
+
+    public void ChangeAngleCams()
+    {
+        cam1POV.m_XAxis.Value = -25;
+        cam1.m_XAxis.Value = -25;
+        cam1Wide.m_XAxis.Value = -25;
+        
+        cam2.m_XAxis.Value = 155;
+        cam2.m_XAxis.Value = 155;
+        cam2Wide.m_XAxis.Value = 155;
+    }
     
     private void Update()
     {

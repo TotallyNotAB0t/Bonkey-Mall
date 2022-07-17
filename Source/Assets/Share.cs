@@ -14,6 +14,7 @@ public class Share : MonoBehaviour
     string PictureFirst = "https://i.imgur.com/U72BfWR.png"; 
     string PictureSecond = "https://i.imgur.com/8h74FZg.png";
     string PictureThird = "https://i.imgur.com/4N9Itdo.png";
+    string PictureFourth = "https://imgur.com/QY4Y3Fg";
     /* l'API de facebook ne permet plus de préremplir des post, ceux pourquoi nous avons opté pour cette solution qui est la meilleure pour le moment */
     
     public void shareScoreOnTwitter () 
@@ -37,6 +38,10 @@ public class Share : MonoBehaviour
         if (LevelManager.GetPlaceP1() == 3)
         {
             Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureThird);
+        }
+        if (LevelManager.GetPlaceP1() == 4)
+        {
+            Application.OpenURL ("https://www.facebook.com/dialog/feed?" + "app_id=" + AppID + "&picture=" + PictureFourth);
         }
     }
 }

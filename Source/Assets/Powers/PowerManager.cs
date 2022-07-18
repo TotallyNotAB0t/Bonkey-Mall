@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 //Class handlind the powerups
 public class PowerManager : MonoBehaviour
 {
+    private float originSpeedBot;
+    private GameObject Bot1;
     [SerializeField] private Material PUBlockU;
     [SerializeField] private Material PUSpeedD;
     [SerializeField] private Material PUSpeedU;
@@ -23,7 +25,12 @@ public class PowerManager : MonoBehaviour
     //Every 3 seconds, the state of the powerup changes (it can stay the same)
     private void Start()
     {
-        InvokeRepeating(nameof(SwitchState), 0, 1);
+        InvokeRepeating(nameof(SwitchState), 0, 0.5f);
+        Bot1 = GameObject.FindWithTag("Bot1");
+        if (Bot1)
+        {
+            originSpeedBot = Bot1.GetComponent<NavMeshAgent>().speed;
+        }
     }
     
     //Rotation of the powerup
@@ -64,7 +71,6 @@ public class PowerManager : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag("Player2"))
         {
             var rig = other.GetComponent<Rigidbody>();
-            var massorigin = rig.mass;
             rig.mass = state switch
             {
                 PowerState.BLOCKYOU => 1000f,
@@ -72,20 +78,22 @@ public class PowerManager : MonoBehaviour
                 PowerState.SPEEDDOWN => 3f
             };
             yield return new WaitForSeconds(3);
-            rig.mass = massorigin;
+            rig.mass = 1;
         }
         else
         {
             var ag = other.GetComponent<NavMeshAgent>();
-            var speedorigin = ag.speed;
             ag.speed = state switch
             {
                 PowerState.BLOCKYOU => 0,
-                PowerState.SPEEDUP => speedorigin * 2,
-                PowerState.SPEEDDOWN => speedorigin / 2
+                PowerState.SPEEDUP => originSpeedBot * 2,
+                PowerState.SPEEDDOWN => originSpeedBot / 2
             };
             yield return new WaitForSeconds(3);
-            ag.speed = speedorigin;
+            if (ag != null)
+            {
+                ag.speed = originSpeedBot;
+            }
         }
     }
 }

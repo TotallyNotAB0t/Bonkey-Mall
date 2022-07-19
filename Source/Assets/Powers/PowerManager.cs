@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 //Class handlind the powerups
 public class PowerManager : MonoBehaviour
 {
-    private float originSpeedBot;
+    public static float originSpeedBot;
     private GameObject Bot1;
     [SerializeField] private Material PUBlockU;
     [SerializeField] private Material PUSpeedD;
@@ -47,7 +47,6 @@ public class PowerManager : MonoBehaviour
             PowerState.BLOCKYOU => PUBlockU,
             PowerState.SPEEDUP => PUSpeedU,
             PowerState.SPEEDDOWN => PUSpeedD,
-            _ => GetComponent<MeshRenderer>().material
         };
     }
 

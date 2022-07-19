@@ -45,7 +45,7 @@ public class FootManager : MonoBehaviour
     //Reset the position of the players and the ball, and their speed to 0
     private void ResetAllPositions()
     {
-        GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams();
+        GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams(-25, 155);
         playerOne.position = new Vector3(10, 20, -20);
         playerTwo.position = new Vector3(-10, 20, 20);
         wotaMelon.position = new Vector3(0, 25, 0);

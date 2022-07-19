@@ -13,12 +13,10 @@ public class BallManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Player2"))
         {
-            Debug.Log("kaboom");
             gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, collision.transform.position, explosionRadius, 0f, ForceMode.Impulse);
         }
         else if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("wol");
             gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForceWall, collision.transform.position, explosionRadiusWall, 0f, ForceMode.Impulse);
         }
     }

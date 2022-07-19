@@ -11,6 +11,7 @@ public class Respawn : MonoBehaviour
     {
         TpObject(collision.gameObject.transform, lastCP);
         ResetSpeed(collision.gameObject.GetComponent<Rigidbody>());
+        GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams(0, 0);
     }
 
     private static void TpObject(Transform mole, Transform CP)
@@ -18,7 +19,7 @@ public class Respawn : MonoBehaviour
         mole.transform.position = CP.transform.position;
     }
 
-    private void ResetSpeed(Rigidbody rig)
+    private static void ResetSpeed(Rigidbody rig)
     {
         rig.velocity = Vector3.zero;
     }

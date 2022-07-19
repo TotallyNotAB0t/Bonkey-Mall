@@ -32,15 +32,15 @@ public class NewFOV : MonoBehaviour
         }
     }
 
-    public void ChangeAngleCams()
+    public void ChangeAngleCams(int P1, int P2)
     {
-        cam1POV.m_XAxis.Value = -25;
-        cam1.m_XAxis.Value = -25;
-        cam1Wide.m_XAxis.Value = -25;
+        cam1POV.m_XAxis.Value = P1;
+        cam1.m_XAxis.Value = P1;
+        cam1Wide.m_XAxis.Value = P1;
         
-        cam2.m_XAxis.Value = 155;
-        cam2.m_XAxis.Value = 155;
-        cam2Wide.m_XAxis.Value = 155;
+        cam2.m_XAxis.Value = P2;
+        cam2.m_XAxis.Value = P2;
+        cam2Wide.m_XAxis.Value = P2;
     }
     
     private void Update()
@@ -60,15 +60,15 @@ public class NewFOV : MonoBehaviour
         }
         
         //P2 cameras
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Comma) || Input.GetKeyDown(KeyCode.Keypad1))
         {
             ChangeCam(false,3);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (Input.GetKeyDown(KeyCode.Period) || Input.GetKeyDown(KeyCode.Keypad2) )
         {
             ChangeCam(false,4);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        else if (Input.GetKeyDown(KeyCode.Slash) || Input.GetKeyDown(KeyCode.Keypad3))
         {
             ChangeCam(false,5);
         }

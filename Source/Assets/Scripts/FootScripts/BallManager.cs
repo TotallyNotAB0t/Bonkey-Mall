@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Author : Pierre
 public class BallManager : MonoBehaviour
 {
     [SerializeField] private float explosionForce;

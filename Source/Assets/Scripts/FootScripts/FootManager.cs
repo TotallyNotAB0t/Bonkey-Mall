@@ -1,8 +1,8 @@
-using Cinemachine;
+using System;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 
+//Author : Pierre
 //Class handling the Foot gamemode
 public class FootManager : MonoBehaviour
 {
@@ -15,6 +15,11 @@ public class FootManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI EndScoreP1, EndScoreP2;
     
     [SerializeField] private Transform playerOne, playerTwo, wotaMelon;
+
+    private void Start()
+    {
+        ResetScores();
+    }
 
     private void SetScore(int player)
     {
@@ -90,5 +95,11 @@ public class FootManager : MonoBehaviour
             return;
         }
         ResetAllPositions();
+    }
+
+    public void ResetScores()
+    {
+        P1Score = 0;
+        P2Score = 0;
     }
 }

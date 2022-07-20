@@ -2,6 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
+//Author : Pierre
 public class UnityTools : MonoBehaviour
 {
     //The first tool, used to instantly win a race by TPing the player to the end

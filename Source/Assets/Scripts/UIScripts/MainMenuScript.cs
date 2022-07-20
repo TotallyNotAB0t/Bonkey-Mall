@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Author : Pierre
 //Multiple button events used in the menus are stored here
@@ -58,7 +59,7 @@ public class MainMenuScript : BasicMenu
 
     public void Next()
     {
-        if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix)
+        if (GameModeManager.CurrentLevelGamemode == GameModeManager.GameMode.GrandPrix && SceneManager.GetActiveScene().name == "MainMenu")
         {
             SceneController.GoToSceneInt(1);
         }

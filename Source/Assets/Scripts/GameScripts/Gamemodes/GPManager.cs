@@ -29,7 +29,7 @@ public class GPManager : MonoBehaviour
         }
     }
 
-    private static int GetPointsP1()
+    public static int GetPointsP1()
     {
         return totalPointP1;
     }

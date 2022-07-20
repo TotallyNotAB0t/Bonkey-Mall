@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.2999878
       objectReference: {fileID: 0}
+    - target: {fileID: 6082598287106462417, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6082598287106462418, guid: 79e1dc3f1ad14f048aa8e06c56df838a, type: 3}
       propertyPath: moveSpeed
       value: 15

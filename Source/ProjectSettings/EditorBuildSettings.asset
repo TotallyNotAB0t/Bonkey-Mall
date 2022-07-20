@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/NewCameraFolder/NewCamera.unity
-    guid: dca11cd068d1508459c537711c9cd531
-  - enabled: 0
-    path: Assets/Scenes/DevTest/CourseTest.unity
-    guid: a072c5fe5f4cbd34da8664779546e4ac
   - enabled: 1
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: a6e8a3a72589e06439737d8168fdfe43

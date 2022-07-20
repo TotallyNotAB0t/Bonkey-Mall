@@ -34,13 +34,20 @@ public class NewFOV : MonoBehaviour
 
     public void ChangeAngleCams(int P1, int P2)
     {
-        cam1POV.m_XAxis.Value = P1;
-        cam1.m_XAxis.Value = P1;
-        cam1Wide.m_XAxis.Value = P1;
-        
-        cam2.m_XAxis.Value = P2;
-        cam2.m_XAxis.Value = P2;
-        cam2Wide.m_XAxis.Value = P2;
+        if (P1 != -1)
+        {
+            cam1POV.m_XAxis.Value = P1;
+            cam1.m_XAxis.Value = P1;
+            cam1Wide.m_XAxis.Value = P1;
+        }
+
+        if (P2 != -1)
+        {
+            cam2.m_XAxis.Value = P2;
+            cam2.m_XAxis.Value = P2;
+            cam2Wide.m_XAxis.Value = P2;
+        }
+
     }
     
     private void Update()

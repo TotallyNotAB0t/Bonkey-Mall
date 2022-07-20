@@ -11,7 +11,15 @@ public class Respawn : MonoBehaviour
     {
         TpObject(collision.gameObject.transform, lastCP);
         ResetSpeed(collision.gameObject.GetComponent<Rigidbody>());
-        GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams(0, 0);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams(0, -1);
+        }
+
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            GameObject.FindWithTag("Script").GetComponent<NewFOV>().ChangeAngleCams(-1, 0);
+        }
     }
 
     private static void TpObject(Transform mole, Transform CP)
